@@ -1,0 +1,10 @@
+<div class="container">
+  <h3 class="text-center" style="padding-top: 30px;">Create new board</h3>
+  <%= simple_form_for [@content, @tags] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :link %>
+  <%= f.input :@tags.name %>
+  <%= f.submit "Create board", class: "btn btn-primary" %>
+  <% end %>
+</div>
