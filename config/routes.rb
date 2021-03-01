@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :boards do
     resources :contents, only: [:index, :show, :new, :create]
   end
+  resources :content, only: [:destroy, :edit]
 end
