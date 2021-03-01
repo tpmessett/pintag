@@ -1,0 +1,2 @@
+class BoardPermission < ApplicationRecord
+end
