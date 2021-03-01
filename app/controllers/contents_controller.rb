@@ -15,12 +15,26 @@ class ContentsController < ApplicationController
   end
 
   def destroy
-    @content = Content.find(params[:id])
+    find_content
     @content.destroy
     redirect_to contents_path
   end
 
-  def booking_params
+  def edit
+    find_content
+  end
+
+  def update
+    find_content
+    @content.update(content_params)
+    redirect_to content_path(@content)
+  end
+
+  def find_content
+    @content = Content.find(params[:id])
+  end
+
+  def content_params
     params.require(:content).permit(:name, :description, :link, :board_id)
   end
 end
