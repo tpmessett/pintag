@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_03_01_154341) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_154341) do
     t.index ["board_id"], name: "index_board_permissions_on_board_id"
     t.index ["user_id"], name: "index_board_permissions_on_user_id"
   end
+
 
   create_table "boards", force: :cascade do |t|
     t.string "name"
@@ -79,4 +79,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_154341) do
   add_foreign_key "content_tags", "tags"
   add_foreign_key "contents", "boards"
   add_foreign_key "tags", "users"
+
 end
+
+
+
