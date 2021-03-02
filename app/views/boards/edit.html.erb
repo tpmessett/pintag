@@ -4,5 +4,6 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.submit "Update board", class: "btn btn-primary" %>
+  <%= link_to "Delete board", board_path(@board), method: :delete, data: {Confirm: "delete board?"} %>
   <% end %>
 </div>
