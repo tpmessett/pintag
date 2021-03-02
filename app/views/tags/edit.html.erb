@@ -1,0 +1,8 @@
+<div class="container">
+  <h3 class="text-center" style="padding-top: 30px;">Edit <%= @tag.name %>:</h3><%=  %>
+  <%= simple_form_for(@tag) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Update tag", class: "btn btn-primary" %>
+  <%= link_to "Delete tag", tag_path(@tag), method: :delete, data: {Confirm: "delete tag?"} %>
+  <% end %>
+</div>

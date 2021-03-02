@@ -5,11 +5,16 @@
 <div class="container2">
   <h3 class="text-center" style="padding-top: 30px;">+ Create new board</h3>
   <%= simple_form_for(@board) do |f| %>
+  <div class="nameDesc">
   <%= f.input :name %>
   <%= f.input :description %>
   <div class="bt2">
+
  </div>
+
   <%= f.submit "Create board", class: "btn btn-primary" %>
   </div>
   <% end %>
+  
+  </div>
 </div>

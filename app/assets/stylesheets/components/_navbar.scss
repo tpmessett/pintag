@@ -1,6 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  color: #fcfcfc;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-grey {
+  background-color: #62bcba;
+  box-shadow: 0 2px 2px -2px #000F08;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +17,43 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px, solid, white
+}
+
+.circle-icon-nav {
+    background: #fcfcfc;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    color: #62bcba
+}
+
+.circle-icon-nav:hover {
+  background: rgba(0, 0, 0, 0.0);
+  color: #fcfcfc;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+  color: #e6e8e6;
+  margin-right: 10px
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  background-color: #fcfcfc;
+}
+
+.fa-map-pin {
+  padding-left: 5px;
+  padding-right: 5px
 }

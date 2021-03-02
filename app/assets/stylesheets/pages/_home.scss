@@ -1,1 +1,251 @@
-// Specific CSS for your home-page
+.header {
+  min-height: 800px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('postitwall.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+.bottom {
+  min-height: 400px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('japan.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  background-attachment: fixed;
+}
+
+.head-text {
+ padding: 16px
+}
+
+body {
+  background-color: #fcfcfc;
+  color: #474448;
+}
+
+.usps {
+  margin-top: 80px;
+  margin-bottom: 80px
+}
+
+.usp {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 24px;
+  flex-basis: 0;
+}
+
+.circle-icon {
+    background: #62bcba;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    color: #fcfcfc;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 34px;
+
+}
+
+.circle-icon:hover {
+  background: #fcfcfc;
+  color: #62bcba;
+}
+
+.explainer {
+  flex-basis: 25em;
+  text-align: center;
+  margin-left: 6em;
+  margin-top: 88px;
+}
+
+.image {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url('board.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 13em;
+  width: 13em;
+  border-radius: 50%;
+}
+
+.image-two {
+  position: absolute;
+  bottom: 0px;
+  right: -10px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url('board2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 14em;
+  width: 14em;
+  border-radius: 50%;
+}
+
+.image-three {
+  position: absolute;
+  top: 100px;
+  left: 140px;
+  background: #b18fcf;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 15em;
+  width: 15em;
+  border-radius: 50%;
+}
+
+.image-four {
+  position: absolute;
+  top: 60px;
+  left: 250px;
+  background: #474448;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+}
+
+.circle-one {
+  position: absolute;
+  top: 40px;
+  left: 250px;
+  background: #474448;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.circle-two {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  background: #474448;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-three {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background: #b18fcf;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.circle-four {
+  position: absolute;
+  bottom: 0px;
+  right: 200px;
+  background: #62bcba;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 10em;
+  width: 10em;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.image-holder {
+  flex-basis: 32em;
+  min-height: 300px;
+  min-width: 450px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  margin-bottom: 80px;
+}
+
+
+#banner-typed-text {
+  display: block
+}
+
+#banner-typed-text-again {
+  display: block
+}
+
+#videos {
+  display:none;
+}
+
+#links {
+  display:none;
+}
+#images {
+  display:none;
+}
+#documents {
+  display:none;
+}
+
+.circle-one:hover #videos {
+  display: block;
+}
+
+.circle-two:hover #links {
+  display: block;
+}
+.circle-three:hover #images {
+  display: block;
+}
+.circle-four:hover #documents {
+  display: block;
+}
+
+.typed-cursor {
+  display: none;
+}
