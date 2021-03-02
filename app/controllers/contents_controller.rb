@@ -8,11 +8,18 @@ class ContentsController < ApplicationController
   def create
     @board = Board.find(params[:board_id])
     @content = Content.new(content_params)
+    @content.board = @board
+    tags = params[:content][:tags].reject(&:blank?).map(&:to_i)
+    @content.tags = Tag.where(id: tags)
     if @content.save
       redirect_to board_path(@board)
     else
       render :new
     end
+  end
+
+  def show
+    @content = Content.find(params[:id])
   end
 
   def destroy
@@ -36,6 +43,6 @@ class ContentsController < ApplicationController
   end
 
   def content_params
-    params.require(:content).permit(:name, :description, :link, :board_id)
+    params.require(:content).permit(:name, :description, :link)
   end
 end

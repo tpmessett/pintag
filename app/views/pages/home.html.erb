@@ -1,2 +1,77 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- rule of eight -->
+<!-- Parralax header image -->
+<div class="header">
+  <div class ="container head-text">
+      <h3 style="color: white;">Welcome to Pintag</h3>
+      <!-- Key text to type on page -->
+      <p style="color: white; height: 20px;"><span id="banner-typed-text"></span></p>
+      <p><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>  <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary" %></p>
+  </div>
+</div>
+<div class="container">
+<!-- 3 USPs with JS animations -->
+  <div class="usps d-flex justify-content-around">
+    <div class="usp">
+      <i class="circle-icon fas fa-link"></i>
+      <H3>Never Lose a Link</h3>
+      <p>Store important files, links and examples in easily searchable and shareable boards so they never get lost or forgotten.</p>
+    </div>
+    <div class="usp">
+      <i class="circle-icon fas fa-info"></i>
+      <h3>Share Knowledge</h3>
+      <p>Just because you're not around it doesn't mean your team shouldn't have access to important examples or info you've found in your research.</p>
+    </div>
+    <div class="usp">
+      <i class="circle-icon fas fa-laptop-medical"></i>
+      <h3>Work Smarter</h3>
+      <p>Knowledge is power, we help your team to achieve more, faster.</p>
+    </div>
+  </div>
+  <div class="details d-flex justify-content-between">
+    <div class="explainer">
+      <h3>Built for dispersed teams</h3>
+      <p>We live in a knowledge economy, make sure your top talent has access to all the information they need to get the job done, wherever in the world they are.</p>
+    </div>
+    <div class=image-holder>
+      <div class="image">
+      </div>
+      <div class="image-two">
+      </div>
+      <div class="image-three">
+      </div>
+      <div class="image-four">
+      </div>
+    </div>
+  </div>
+  <div class="details d-flex justify-content-between">
+    <div class=image-holder>
+      <div class="circle-one">
+        <span id="videos">Videos</span>
+      </div>
+      <div class="circle-two">
+        <span id="links">Links</span>
+      </div>
+      <div class="circle-three">
+        <span id="images">Images</span>
+      </div>
+      <div class="circle-four">
+        <span id="documents">Documents</span>
+      </div>
+    </div>
+    <div class="explainer">
+      <h3>Save time and money</h3>
+      <p>If you've ever spent ages trawling old emails, slack messages or favourites for an article you read that contains something you need right now then this is for you!</p>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class ="container head-text">
+      <h3 style="color: white;">Time to get started?</h3>
+      <!-- Key text to type on page -->
+      <p style="color: white; height: 20px; margin-bottom: 20px;">
+        <span id="banner-typed-text-again"></span>
+      </p>
+      <p><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %> </p>
+  </div>
+</div>
+<!-- footer - add on index page -->
