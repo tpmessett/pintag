@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :contents, only: [:index, :show, :new, :create]
   end
   resources :content, only: [:destroy, :edit, :update]
+  resources :tags
 end
