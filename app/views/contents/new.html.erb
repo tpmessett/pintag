@@ -4,6 +4,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :link %>
+  <%= f.input :file_upload, as: :file %>
   <%= f.input :tags, collection: @tags, input_html: { multiple: true } %>
   <%= f.submit "Create content", class: "btn btn-primary" %>
   <% end %>
