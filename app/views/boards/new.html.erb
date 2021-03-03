@@ -1,20 +1,25 @@
 <br>
 <br>
 <br>
+
 <div class="container3">
-<div class="container2">
+ <div class="col-sm-6 offset-sm-3">
+ <div class="container2 p-5">
+ 
   <h3 class="text-center" style="padding-top: 30px;">+ Create new board</h3>
+  
   <%= simple_form_for(@board) do |f| %>
   <div class="nameDesc">
   <%= f.input :name %>
   <%= f.input :description %>
   <div class="bt2">
 
- </div>
+ 
 
   <%= f.submit "Create board", class: "btn btn-primary" %>
   </div>
+  </div>
   <% end %>
-
+</div>
   </div>
 </div>
