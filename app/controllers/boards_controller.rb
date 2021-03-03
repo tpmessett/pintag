@@ -1,5 +1,4 @@
 class BoardsController < ApplicationController
-
   def index
     @boards = Board.all
   end
@@ -35,7 +34,7 @@ class BoardsController < ApplicationController
   def destroy
     @board = Board.find(params[:id])
     @board.destroy
-    redirect_to users_boards_path
+    redirect_to boards_path
   end
 
   private

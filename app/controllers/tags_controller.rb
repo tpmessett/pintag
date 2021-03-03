@@ -13,6 +13,7 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+    @tag.user = current_user
     if @tag.save
       redirect_to root_path
     else
