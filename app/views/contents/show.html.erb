@@ -2,3 +2,4 @@
   <% @content.tags.each do |tag| %>
     <p><%= link_to tag.name, tag_path(tag) %></p>
   <% end %>
+  <%= link_to "Edit content", edit_content_path(@content) %>
