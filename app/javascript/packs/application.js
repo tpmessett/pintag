@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { LoginToggle } from '../components/login_form';
-
+import { RegCheck } from '../components/login_form';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { loadDynamicBannerText } from '../components/banner';
@@ -37,9 +37,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   if (document.querySelector('.sign-in')) {
     console.log('sign in found');
+    RegCheck();
     LoginToggle();
   }
-
   loadDynamicBannerText();
   initUpdateNavbarOnScroll();
 });
