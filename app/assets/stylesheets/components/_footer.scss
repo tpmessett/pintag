@@ -1,8 +1,12 @@
+.content {
+  min-height: calc(100vh - 49px);
+}
 .footer {
   text-align: center;
   color: white;
   background-color: #474448;
-}
+  width: 100%;
+  }
 
 .fa-heart {
   color: red
