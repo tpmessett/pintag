@@ -32,12 +32,14 @@ import { loadDynamicBannerText } from '../components/banner';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
-  loadDynamicBannerText();
-  initUpdateNavbarOnScroll();
+
   // Call your functions here, e.g:
   // initSelect2();
   if (document.querySelector('.sign-in')) {
     console.log('sign in found');
     LoginToggle();
   }
+
+  loadDynamicBannerText();
+  initUpdateNavbarOnScroll();
 });
