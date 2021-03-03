@@ -4,5 +4,6 @@ class Content < ApplicationRecord
   belongs_to :board
   has_one_attached :file_upload
   include PgSearch::Model
-  multisearchable against: [name: 'B', description: 'C'], using: [:tsearch]
+  multisearchable against: [:name, :description], using: [:tsearch]
+
 end
