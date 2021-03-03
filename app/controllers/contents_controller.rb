@@ -19,13 +19,14 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @content = Content.find(params[:id])
+    find_content
   end
 
   def destroy
     find_content
+    board = @content.board
     @content.destroy
-    redirect_to contents_path
+    redirect_to board_path(board)
   end
 
   def edit
@@ -35,7 +36,7 @@ class ContentsController < ApplicationController
   def update
     find_content
     @content.update(content_params)
-    redirect_to content_path(@content)
+    redirect_to board_content_path(@content.board.id, @content.id)
   end
 
   def find_content

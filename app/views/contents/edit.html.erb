@@ -1,1 +1,11 @@
-
+<div class="container">
+  <h3 class="text-center" style="padding-top: 30px;">Edit <%= @content.name %>:</h3>
+  <%= simple_form_for [@board, @content] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :link %>
+  <%= f.input :tags, collection: @tags, input_html: { multiple: true } %>
+  <%= f.submit "Update content", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "Delete content", content_path(@content), method: :delete, data: {Confirm: "delete content?"} %>
+</div>
