@@ -1,7 +1,22 @@
-
 <div class="container board-list">
-  <% @boards.each do |board| %>
-    <p><%= link_to board.name, board_path(board) %></p>
-    <%= link_to "Add tag", new_tag_path %>
-  <% end %>
+  <div class="cards">
+    <% @boards.each do |board| %>
+    <div class="card-category">
+      <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://source.unsplash.com/random?startup)">
+        <h5><%= board.name %></h5>
+      </div>
+      <div class="card-body">
+        <p><%= board.description.truncate(50) %></p>
+        <%= link_to board_path(board) do %>
+        <p class="btn btn-primary btn-md" id="view-board" style="color: #FCFCFC;">View This Board</p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <div class="card-category">
+      <div class="new-board" style="height: 100%;">
+        <p id="add-board">+</p>
+      </div>
+    </div>
+  </div>
 </div>
