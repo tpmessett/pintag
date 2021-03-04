@@ -10,12 +10,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <% if current_user %>
         <div id="search-controls" class="ml-auto">
-          <form class="search-form form-inline container ">
+          <form action="<%= board_path current_user.boards.first || Board.first %>" class="search-form form-inline container ">
             <input class="text-input form-control" type="text" placeholder="Find something?" name="search" id="search" />
-            <select id="search-type" name="search-type" type="text" class="custom-select form-control">
+            <select id="searchtype" name="searchtype" type="text" class="custom-select form-control">
               <option  selected value="all">Seach All</option>
               <option value="tag">Search By Tag</option>
-              <option value="current-board">Current Board Only</option>
+              <% if @board != nil %>
+                <option value="current-board">Current Board Only</option>
+              <% end %>
           </select>
           <button id="search-button" type="submit"><i class="fas fa-search"></i></button>
           </form>
