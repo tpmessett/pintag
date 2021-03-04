@@ -19,6 +19,10 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @contents = @board.contents
+    if params[:search].present?
+      @contents = PgSearch.multisearch(params[:search])
+    end
   end
 
   def edit

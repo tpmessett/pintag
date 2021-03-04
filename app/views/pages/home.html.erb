@@ -5,7 +5,13 @@
       <h3 style="color: white;">Welcome to Pintag</h3>
       <!-- Key text to type on page -->
       <p style="color: white; height: 20px;"><span id="banner-typed-text"></span></p>
-      <p><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %>  <%= link_to "Login", new_user_registration_path, class: "btn btn-outline-primary" %></p>
+
+      <p>
+        <%= link_to 'Get Started', new_user_registration_path(reg: "true"), class: "btn btn-primary" %>
+
+        <%= link_to "Login", new_user_registration_path, class: "btn btn-outline-primary" %>
+      </p>
+
   </div>
 </div>
 <div class="container">
@@ -71,7 +77,7 @@
       <p style="color: white; height: 20px; margin-bottom: 20px;">
         <span id="banner-typed-text-again"></span>
       </p>
-      <p><%= link_to "Get Started", new_user_registration_path, class: "btn btn-primary" %> </p>
+      <p><%= link_to "Get Started", new_user_registration_path(reg: "true"), class: "btn btn-primary" %> </p>
   </div>
 </div>
 <!-- footer - add on index page -->

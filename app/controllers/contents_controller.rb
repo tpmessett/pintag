@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
+
   def new
     @content = Content.new
     @board = Board.find(params[:board_id])
@@ -20,6 +21,7 @@ class ContentsController < ApplicationController
 
   def show
     find_content
+    @file_name = @content.file_upload.filename.to_s.match(/^([^.]+)/)
   end
 
   def destroy
@@ -44,6 +46,6 @@ class ContentsController < ApplicationController
   end
 
   def content_params
-    params.require(:content).permit(:name, :description, :link)
+    params.require(:content).permit(:name, :description, :link, :file_upload)
   end
 end
