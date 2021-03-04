@@ -36,7 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   if (document.querySelector('.sign-in')) {
-    console.log('sign in found');
     LoginToggle();
   }
 

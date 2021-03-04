@@ -46,14 +46,14 @@
     width: $contW;
     height: 550px;
     margin: 0 auto 100px;
-    background: #fff;
+    // background: #fff;
     border-radius: 10px;
   }
 
   .form {
     position: relative;
     width: 400px;
-    margin: 0 80px;
+    margin: 120px 80px;
     // width: $formW;
     height: 100%;
     transition: transform $switchAT ease-in-out;
@@ -143,7 +143,7 @@
       transition: transform $switchAT ease-in-out;
 
       h2 {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         font-weight: normal;
       }
 
@@ -228,7 +228,7 @@
   }
 
   label {
-    display: block;
+    display: none;
     width: $inputW;
     margin: 25px auto 0;
     // text-align: center;
@@ -301,7 +301,7 @@
   .login_button {
     background-color: #9ad6d5;
     border-radius: 30px;
-    color:white;
+    // color:white;
   }
 
   .login_button:hover {
@@ -316,7 +316,7 @@
     font-size: 30px;
   }
   i:hover {
-    color:#9ad6d5;
+    color:#fff;
 
   }
 
@@ -330,7 +330,7 @@
 }
 @media (max-width: 540px) {
   /* For a screen < 540px */
-  .sub-cont {
+  .form .sign-in{
     width: 50%;
   }
 
