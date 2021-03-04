@@ -1,4 +1,22 @@
-.board-list {
-  margin-top: 75px;
+.board-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('postitwall.jpg');
+  min-height: 220px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  background-attachment: fixed;
+  margin-top: 40px;
+  color: white;
 }
 
+.board-list {
+  margin-top: 40px;
+}
+
+.content-card {
+  margin-bottom: 20px;
+}

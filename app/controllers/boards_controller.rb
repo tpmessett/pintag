@@ -21,6 +21,7 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @tags = Tag.all
     @contents = @board.contents
+
     if params[:searchtype] == "all"
       @contents = PgSearch.multisearch(params[:search])
 

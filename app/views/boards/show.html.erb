@@ -1,10 +1,28 @@
-<div class="container board-list">
-  <p><%= @board.name %></p>
-  <p><%= @board.description %></p>
-  <%= link_to "Edit board", edit_board_path(@board) %>
-  <%= link_to "Add content", new_board_content_path(@board.id) %>
-  <% @contents.each do |content| %>
-  <p><%=content.name %>
-  <p><%= link_to "Show content", board_content_path(@board.id, content.id) %></p>
-  <% end %>
+<div class="board-header">
+  <div class ="container head-text">
+    <H3><%= @board.name %></H3>
+    <p><%= @board.description %></p>
+    <p>
+        <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %>
+
+        <%= link_to 'Edit Board', edit_board_path(@board), class: "btn btn-outline-primary" %>
+      </p>
+  </div>
 </div>
+
+<div class="container board-list">
+  <div class="row">
+    <% @contents.each do |content| %>
+    <div class="col-sm-4">
+      <div class="content-card card">
+        <div class="card-body">
+          <h5 class="card-title"><%=content.name %></h5>
+          <p classs="card-text"><%=content.description %></p>
+          <p class="btn btn-outline-primary"><%= link_to "Show content", board_content_path(@board.id, content.id) %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
