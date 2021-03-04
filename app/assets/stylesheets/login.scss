@@ -24,7 +24,7 @@
     border: none;
     outline: none;
     background: none;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    // font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   }
 
 
@@ -52,7 +52,9 @@
 
   .form {
     position: relative;
-    width: $formW;
+    width: 400px;
+    margin: 0 80px;
+    // width: $formW;
     height: 100%;
     transition: transform $switchAT ease-in-out;
     padding: 50px 30px 0;
@@ -62,12 +64,6 @@
     border: none;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     border-bottom: 1px;
-  }
-
-  .form-group .boolean {
-    width: 50%;
-    display: flex;
-    margin-left: 25px;
   }
 
   .sub-cont {
@@ -226,7 +222,7 @@
   }
 
   h2 {
-    width: 100%;
+    // width: 100%;
     font-size: 26px;
     text-align: center;
   }
@@ -235,7 +231,7 @@
     display: block;
     width: $inputW;
     margin: 25px auto 0;
-    text-align: center;
+    // text-align: center;
 
     span {
       font-size: 12px;
@@ -247,11 +243,11 @@
   input {
     display: block;
     width: 100%;
-    margin: 5px;
+    margin: 10px;
     padding-bottom: 5px;
     font-size: 16px;
     border-bottom: 1px solid rgba(0,0,0,0.4);
-    text-align: center;
+    text-align: justify;
   }
 
   .forgot-pass {
@@ -263,7 +259,7 @@
 
   .submit {
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     text-transform: uppercase;
   }
 
@@ -313,6 +309,32 @@
     border-radius: 30px;
     color: #fff;
   }
+
+  .social-icons {
+    text-align: center;
+    padding:20px;
+    font-size: 30px;
+  }
+  i:hover {
+    color:#9ad6d5;
+
+  }
+
+  @media (max-width: 960px) {
+  /* For a screen < 960px */
+
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px */
+
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px */
+  .sub-cont {
+    width: 50%;
+  }
+
+}
 
 
 

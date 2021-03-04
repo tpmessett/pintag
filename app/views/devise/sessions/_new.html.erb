@@ -9,12 +9,18 @@
               <%= f.input :password,
                           required: false,
                           input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <!-- <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %> -->
             </div>
 
             <div class="form-actions">
               <%= f.button :submit, "SIGN IN", class: "login_button" %>
             </div>
+            <div class="social-icons">
+               <i class="fab fa-google-plus-square"></i>
+               <i class="fab fa-twitter-square"></i>
+               <i class="fab fa-instagram-square"></i>
+               <i class="fab fa-facebook-square"></i>
+               <i class="fab fa-youtube-square"></i>
+            </div>
           <% end %>
-
           <%#= render "devise/shared/links" %>
