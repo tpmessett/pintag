@@ -1,4 +1,5 @@
 <p><%= @content.name %></p>
+<p><%= link_to @file_name, @content.file_upload.service_url %></p>
   <% @content.tags.each do |tag| %>
     <p><%= link_to tag.name, tag_path(tag) %></p>
   <% end %>

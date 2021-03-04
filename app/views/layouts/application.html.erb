@@ -10,11 +10,16 @@
       <%= yield (:login_stylesheet) %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
-
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+  <body>
+      <%= render 'shared/flashes' %>
+      <% if request.path == '/' %>
+        <%= render 'shared/navbar' %>
+      <% else %>
+        <%= render 'shared/navbartwo' %>
+      <% end %>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
   </body>
 </html>
