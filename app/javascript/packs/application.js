@@ -40,6 +40,8 @@ document.addEventListener('turbolinks:load', () => {
     RegCheck();
     LoginToggle();
   }
-  loadDynamicBannerText();
-  initUpdateNavbarOnScroll();
+ if (document.querySelector('.usp')) {
+    loadDynamicBannerText();
+    initUpdateNavbarOnScroll();
+  }
 });
