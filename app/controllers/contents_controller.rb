@@ -20,6 +20,7 @@ class ContentsController < ApplicationController
 
   def show
     find_content
+    @file_name = @content.file_upload.filename.to_s.match(/^([^.]+)/)
   end
 
   def destroy
