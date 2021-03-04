@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :board_permissions
   has_many :boards
   has_many :tags
+  has_one_attached :photo
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
