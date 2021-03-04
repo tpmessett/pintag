@@ -3,15 +3,8 @@
   <p><%= @board.description %></p>
   <%= link_to "Edit board", edit_board_path(@board) %>
   <%= link_to "Add content", new_board_content_path(@board.id) %>
-<% if params[:search].present? %>
-  <% @contents.each do |content| %>
-  <p><%=content.content %>
-  <p><%= link_to "Show content", board_content_path(@board.id, content.id) %></p>
-  <% end %>
-<% else %>
   <% @contents.each do |content| %>
   <p><%=content.name %>
   <p><%= link_to "Show content", board_content_path(@board.id, content.id) %></p>
   <% end %>
-<% end %>
 </div>
