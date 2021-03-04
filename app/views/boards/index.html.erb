@@ -1,4 +1,7 @@
-<% @boards.each do |board| %>
-  <p><%= link_to board.name, board_path(board) %></p>
-  <%= link_to "Add tag", new_tag_path %>
-<% end %>
+
+<div class="container board-list">
+  <% @boards.each do |board| %>
+    <p><%= link_to board.name, board_path(board) %></p>
+    <%= link_to "Add tag", new_tag_path %>
+  <% end %>
+</div>
