@@ -8,11 +8,11 @@ class UserController < ApplicationController
   def tags
     @tags = @user.tags
   end
-  
+
     private
 
     def set_user
       @user = current_user
     end
-  
+
 end
