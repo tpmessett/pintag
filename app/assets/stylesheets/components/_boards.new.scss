@@ -25,6 +25,23 @@ margin-top: 80px;
 color: g474448;
 }
 
+
+
+.line_color {
+  border-bottom: 2px solid #000;
+  background: #f5f7fa;
+  padding:7px;
+  color: #b8bbbf;
+}
+
+.line_color:hover {
+  color:#000;
+}
+.modal-content {
+  background-color:#fcfcfc;
+}
+
+
 .page-background {
     background-image: url(https://source.unsplash.com/Q7PclNhVRI0);
     background-position: bottom;
@@ -46,3 +63,4 @@ color: g474448;
 .newerclass {
   padding-top: 20px;
 }
+
