@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   def index
     @boards = Board.all
+    @photos = Unsplash::Photo.random(count: 10, query: "startup")
   end
 
   def new
