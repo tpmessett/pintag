@@ -32,6 +32,7 @@
           <% else %>
             <p class="btn btn-outline-primary"><%= link_to "Show content", content.link, target: :_blank %></p>
           <% end %>
+          <p class="btn btn-outline-primary"><%= link_to "Edit content", edit_content_path(content) %></p>
         </div>
         <div class="card-footer">
             <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
@@ -39,6 +40,7 @@
               <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
             </div>
             <% end %>
+            <span class="tag-display" style="margin-left: 10px;"> <%= link_to "Add tag", new_tag_path %></span>
           </div>
         </div>
       </div>
