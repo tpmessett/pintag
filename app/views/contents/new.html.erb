@@ -1,5 +1,10 @@
+<br>
+<div class="page-background">
 <div class="container">
-  <h3 class="text-center" style="padding-top: 30px;">Create new content</h3>
+<div class="col-sm-7 offset-sm-2">
+<div class="newerclass">
+<div class="container2 bg-white p-5">
+  <h3 class="text-center" style="padding-top: 30px;">+ Create new content</h3>
   <%= simple_form_for [@board, @content] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -8,4 +13,8 @@
   <%= f.input :tags, collection: @tags, input_html: { multiple: true } %>
   <%= f.submit "Create content", class: "btn btn-primary" %>
   <% end %>
+</div>
+</div>
+</div>
+</div>
 </div>
