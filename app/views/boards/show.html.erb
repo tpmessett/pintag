@@ -16,6 +16,9 @@
       <div class="col-sm-4">
         <div class="content-card card">
           <div class="board-image">
+            <div class="delete">
+            <a>x</a>
+          </div>
             <div class="circle-overlay">
               <% if content.link? %>
                 <i class="fas fa-link"></i>
@@ -28,14 +31,14 @@
           <h5 class="card-title"><%=content.name %></h5>
           <p classs="card-text"><%=content.description %></p>
           <% if content.file_upload.attachment != nil %>
-            <p class="btn btn-outline-primary"><%= link_to "Show content", content.file_upload.service_url, target: :_blank %></p>
+            <%= link_to "Show content", content.file_upload.service_url, target: :_blank, class: "btn btn-outline-primary"%>
           <% else %>
-            <p class="btn btn-outline-primary"><%= link_to "Show content", content.link, target: :_blank %></p>
+            <%= link_to "Show content", content.link, target: :_blank, class: "btn btn-outline-primary" %>
           <% end %>
-          <p class="btn btn-outline-primary"><%= link_to "Edit content", edit_content_path(content) %></p>
+          <a><%= link_to "Edit content", edit_content_path(content) %></a>
         </div>
         <div class="card-footer">
-            <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
+            <% content.tags.each do |tag| %>
             <div class="btn btn-tag">
               <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
             </div>
