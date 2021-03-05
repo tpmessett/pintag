@@ -1,16 +1,18 @@
 <div class="container board-list">
   <div class="cards">
+    <% counter = 0 %>
     <% @boards.each do |board| %>
     <div class="card-category">
-      <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://source.unsplash.com/random?startup)">
+      <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(<%= @photos[counter].urls.raw %>)">
         <h5><%= board.name %></h5>
       </div>
       <div class="card-body card-body-boards ">
-        <p><%= board.description.truncate(50) %></p>
+        <p><%= board.description.truncate(45) %></p>
         <%= link_to board_path(board) do %>
-        <p class="btn btn-primary btn-md" id="view-board" style="color: #FCFCFC;">View This Board</p>
+        <p class="btn btn-primary btn-md" id="view-board" style="color: #FCFCFC; margin: 0px;">View This Board</p>
         <% end %>
       </div>
+      <% counter += 1 %>
     </div>
     <% end %>
     <div class="card-category">
