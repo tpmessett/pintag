@@ -5,14 +5,14 @@
 <p class="tip"></p>
 <div class="cont">
     <div class="form sign-in">
-     <h2>SIGN IN TO PINBOARD</h2>
+     <h4>SIGN IN TO PINBOARD</h4>
       <%= render "devise/sessions/new" %>
       <%#= render "devise/shared/links" %>
     </div>
     <div class="sub-cont">
     <div class="img">
       <div class="img__text m--up">
-        <h2>New here?</h2>
+        <h3>New here?</h3>
         <p>Sign up and Create a Board!</p>
       </div>
       <div class="img__text m--in">
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="form sign-up">
-      <h2>CREATE AN ACCOUNT</h2>
+      <h4>CREATE AN ACCOUNT</h4>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 

@@ -29,3 +29,22 @@ margin-top: 80px;
 .deletebutton {
 color: g474448;
 }
+
+
+.line_color {
+  border-bottom: 2px solid #000;
+  background: #f5f7fa;
+  padding:7px;
+  color: #b8bbbf;
+}
+
+.line_color:hover {
+  color:#000;
+}
+.modal-content {
+  background-color: transparent;
+}
+.modal-content:hover {
+  background:#fcfcfc;
+}
+
