@@ -32,7 +32,9 @@
         </div>
         <div class="card-footer">
             <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
-             <button class="btn btn-show btn-outline-secondary"> <%= tag.name %> </button>
+            <div class="btn btn-tag">
+              <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
+            </div>
             <% end %>
           </div>
       </div>
