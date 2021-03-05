@@ -27,9 +27,11 @@
         </div>
         <div class="card-body">
           <h5 class="card-title"><%=content.name %></h5>
-          <p class="card-text"><%=content.description %></p>
-          <%= link_to board_content_path(@board.id, content.id) do %>
-            <button class="btn btn-show btn-outline-primary">Show content</button>
+          <p classs="card-text"><%=content.description %></p>
+          <% if content.file_upload.attachment != nil %>
+            <p class="btn btn-outline-primary"><%= link_to "Show content", content.file_upload.service_url, target: :_blank %></p>
+          <% else %>
+            <p class="btn btn-outline-primary"><%= link_to "Show content", content.link, target: :_blank %></p>
           <% end %>
         </div>
         <div class="card-footer">
