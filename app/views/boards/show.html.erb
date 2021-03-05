@@ -1,26 +1,28 @@
-<div class="board-header">
-  <div class ="container head-text">
-    <H3><%= @board.name %></H3>
-    <p><%= @board.description %></p>
-    <p>
-        <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %>
-        <%= link_to 'Edit Board', edit_board_path(@board), class: "btn btn-outline-primary" %>
-      </p>
+<div class="page-background">
+  <div class="board-header">
+    <div class ="container head-text">
+      <H3><%= @board.name %></H3>
+      <p><%= @board.description %></p>
+      <p>
+          <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %>
+          <%= link_to 'Edit Board', edit_board_path(@board), class: "btn btn-outline-primary" %>
+        </p>
+    </div>
   </div>
-</div>
 
-<div class="container board-list">
-  <div class="row">
-    <% @contents.each do |content| %>
-    <div class="col-sm-4">
-      <div class="content-card card">
-        <div class="board-image">
-          <div class="circle-overlay">
-            <% if content.link? %>
-              <i class="fas fa-link"></i>
-            <% else %>
-              <i class="fas fa-info"></i>
-            <% end %>
+  <div class="container board-list">
+    <div class="row">
+      <% @contents.each do |content| %>
+      <div class="col-sm-4">
+        <div class="content-card card">
+          <div class="board-image">
+            <div class="circle-overlay">
+              <% if content.link? %>
+                <i class="fas fa-link"></i>
+              <% else %>
+                <i class="fas fa-info"></i>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="card-body">
@@ -37,9 +39,15 @@
             </div>
             <% end %>
           </div>
+          <div class="card-footer">
+              <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
+              <button class="btn btn-show btn-outline-secondary"> <%= tag.name %> </button>
+              <% end %>
+            </div>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 
