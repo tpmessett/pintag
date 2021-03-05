@@ -24,7 +24,6 @@
               <% end %>
             </div>
           </div>
-        </div>
         <div class="card-body">
           <h5 class="card-title"><%=content.name %></h5>
           <p classs="card-text"><%=content.description %></p>
@@ -41,15 +40,10 @@
             </div>
             <% end %>
           </div>
-          <div class="card-footer">
-              <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
-              <button class="btn btn-show btn-outline-secondary"> <%= tag.name %> </button>
-              <% end %>
-            </div>
         </div>
       </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 
