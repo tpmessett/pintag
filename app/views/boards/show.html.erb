@@ -24,11 +24,19 @@
               <% end %>
             </div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title"><%=content.name %></h5>
-            <p class="card-text"><%=content.description %></p>
-            <%= link_to board_content_path(@board.id, content.id) do %>
-              <button class="btn btn-show btn-outline-primary">Show content</button>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%=content.name %></h5>
+          <p class="card-text"><%=content.description %></p>
+          <%= link_to board_content_path(@board.id, content.id) do %>
+            <button class="btn btn-show btn-outline-primary">Show content</button>
+          <% end %>
+        </div>
+        <div class="card-footer">
+            <% content.tags.joins(:content_tags).where(content_tags: {content_id: content.id}).each do |tag| %>
+            <div class="btn btn-tag">
+              <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
+            </div>
             <% end %>
           </div>
           <div class="card-footer">

@@ -19,14 +19,40 @@
 
 .content-card {
   margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
   border-radius: 2%;
   overflow: hidden;
 }
 
+.tag-display a {
+  color: $violet;
+}
+
+
 .btn-show:hover {
   color: white;
+
 }
+
+.btn-tag {
+  border-radius: 50px;
+  border: 1px solid;
+  border-color: $violet;
+  color: $violet;
+  margin-bottom: 10px;
+  .tag-display a {
+  color: $violet;
+}
+}
+
+.btn-tag:hover {
+  color: white;
+  background-color: $violet;
+  .tag-display a {
+  color: white
+}
+}
+
 
 .content-card:hover {
   box-shadow: none;
