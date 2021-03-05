@@ -5,7 +5,7 @@
       <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://source.unsplash.com/random?startup)">
         <h5><%= board.name %></h5>
       </div>
-      <div class="card-body">
+      <div class="card-body card-body-boards ">
         <p><%= board.description.truncate(50) %></p>
         <%= link_to board_path(board) do %>
         <p class="btn btn-primary btn-md" id="view-board" style="color: #FCFCFC;">View This Board</p>
