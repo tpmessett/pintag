@@ -17,7 +17,7 @@
       </div>
       <div class="img__text m--in">
         <h2>One of us?</h2>
-        <p>If you already has an account, just sign in. We've missed you!</p>
+        <p>If you already have an account, just sign in. We've missed you!</p>
       </div>
       <div class="img__btn">
         <span class="m--up">Sign Up</span>
@@ -44,6 +44,7 @@
                       required: true,
                       input_html: { autocomplete: "new-password" },
                        placeholder: 'Password Confirmation'  %>
+          <%= f.input :photo, as: :file %>
         </div>
 
         <div class="form-actions">

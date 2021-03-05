@@ -1,5 +1,4 @@
 class ContentsController < ApplicationController
-
   def new
     @content = Content.new
     @board = Board.find(params[:board_id])
@@ -38,7 +37,7 @@ class ContentsController < ApplicationController
   def update
     find_content
     @content.update(content_params)
-    redirect_to board_content_path(@content.board.id, @content.id)
+    redirect_to board_path(@content.board)
   end
 
   def find_content

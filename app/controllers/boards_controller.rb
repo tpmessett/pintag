@@ -19,9 +19,20 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @tags = Tag.all
     @contents = @board.contents
-    if params[:search].present?
+
+    if params[:searchtype] == "all"
       @contents = PgSearch.multisearch(params[:search])
+
+      @contents = Content.where(id: @contents.pluck(:searchable_id))
+
+    elsif params[:searchtype] == "tag"
+      @tags = @tags.where(name: (params[:search]))
+      @contents = Content.joins(:content_tags).where(content_tags: {tag_id: @tags.ids})
+    elsif params[:searchtype] == "current-board"
+      @contents = PgSearch.multisearch(params[:search])
+      @contents = @board.contents.where(id: @contents.pluck(:searchable_id))
     end
   end
 

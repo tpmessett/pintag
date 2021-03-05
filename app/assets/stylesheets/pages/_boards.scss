@@ -1,4 +1,101 @@
-.board-list {
-  margin-top: 75px;
+.board-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-url('postitwall.jpg');
+  min-height: 220px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  background-attachment: fixed;
+  margin-top: 40px;
+  color: white;
 }
 
+.board-list {
+  margin-top: 40px;
+}
+
+.content-card {
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+  border-radius: 2%;
+  overflow: hidden;
+}
+
+.tag-display a {
+  color: $violet;
+}
+
+
+.btn-outline-primary:hover {
+  color: white;
+
+}
+
+.btn-tag {
+  border-radius: 50px;
+  border: 1px solid;
+  border-color: $violet;
+  color: $violet;
+  margin-bottom: 10px;
+  .tag-display a {
+  color: $violet;
+}
+}
+
+.btn-tag:hover {
+  color: white;
+  background-color: $violet;
+  .tag-display a {
+  color: white
+}
+}
+
+
+.content-card:hover {
+  box-shadow: none;
+}
+
+.board-image{
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), image-url('pin.jpg');
+  overflow: auto;
+  position: relative;
+}
+
+.circle-overlay {
+    background: #62bcba;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    color: #fcfcfc;
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.circle-overlay:hover {
+  background: #fcfcfc;
+  color: #62bcba;
+}
+
+a {
+  vertical-align: middle
+}
+
+.delete {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  cursor: pointer;
+}

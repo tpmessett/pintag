@@ -1,10 +1,5 @@
 .container3 {
-border: 1px solid;
-padding: 10px 20px 80px 20px;
-box-shadow: 5px 10px 8px #888888;
-
-
-
+margin-top: 80px;
 }
 
 .bt2 {
@@ -19,7 +14,7 @@ font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
 .container2 {
-margin-top: 20px;
+
 border: 1px solid;
 border-color: white;
 box-shadow: 0 3px 6px rgba(0,0,0,0.4);
@@ -29,6 +24,7 @@ margin-top: 80px;
 .deletebutton {
 color: g474448;
 }
+
 
 
 .line_color {
@@ -43,5 +39,28 @@ color: g474448;
 }
 .modal-content {
   background-color:#fcfcfc;
+}
+
+
+.page-background {
+    background-image: url(https://source.unsplash.com/Q7PclNhVRI0);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    // background-color: rgb(230, 230, 230);
+}
+
+.newclass {
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.centralize {
+  text-align: center;
+}
+
+.newerclass {
+  padding-top: 20px;
 }
 
