@@ -46,15 +46,24 @@ a:hover {
   text-decoration: none;
  }
 
- .new-board {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ .new-board:hover {
+  background-color: #B18FCF;
  }
 
  #add-board {
   font-size: 72px;
   color: #474448;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+ }
+
+ #add-board:hover {
+  color: #FCFCFC;
  }
 
   // Smallest device

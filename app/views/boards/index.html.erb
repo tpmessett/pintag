@@ -14,9 +14,11 @@
     </div>
     <% end %>
     <div class="card-category">
+      <%= link_to new_board_path do %>
       <div class="new-board" style="height: 100%;">
-        <p id="add-board">+</p>
+        <p id="add-board">+<span style="font-size: 16px;">Create board</span></p>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
