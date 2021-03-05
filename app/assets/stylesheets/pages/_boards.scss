@@ -99,3 +99,32 @@ a {
   right: 8px;
   cursor: pointer;
 }
+
+#add-content {
+  font-size: 72px;
+  color: #474448;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+ }
+
+ #add-content:hover {
+  color: #FCFCFC;
+ }
+
+ .stretch {
+  display: flex;
+  align-items: stretch;
+ }
+
+ .content-add-card {
+  overflow: hidden;
+  background: white;
+  color: black;
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ }

@@ -1,4 +1,5 @@
 <div class="page-background">
+  <!-- header -->
   <div class="board-header">
     <div class ="container head-text">
       <H3><%= @board.name %></H3>
@@ -10,7 +11,10 @@
             Share
           </a>
       </p>
-      <!-- Modal -->
+    </div>
+  </div>
+
+  <!-- Modal -->
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -34,14 +38,15 @@
                 </div>
               </div>
             </div>
-    </div>
-  </div>
+          </div>
 
+
+  <!-- body -->
   <div class="container board-list">
     <div class="row">
       <% @contents.each do |content| %>
-      <div class="col-sm-4">
-        <div class="content-card card">
+      <div class="col-sm-4 d-flex align-items-stretch">
+        <div class="flex-fill content-card card">
           <div class="board-image">
             <div class="delete">
             <a>x</a>
@@ -74,7 +79,15 @@
           </div>
         </div>
       </div>
-        <% end %>
+      <% end %>
+      <div class=" col-sm-4 d-flex align-items-stretch">
+        <div class="content-add-card content-card flex-fill">
+          <%= link_to new_board_content_path(@board.id) do %>
+          <div class="new-board" style="height: 100%; ">
+            <p id="add-content">+<span style="font-size: 16px;">Add New Content To This Board</span></p>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

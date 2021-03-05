@@ -29,6 +29,9 @@ gem 'redis', '~> 4.0'
 # AWS s3 Gem
 gem "aws-sdk-s3", require: false
 
+# unsplash Gem
+gem 'unsplash'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
