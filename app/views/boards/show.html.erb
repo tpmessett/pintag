@@ -24,19 +24,19 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                    <form action="<%= share_board_path(@board) %>" method="post">
-                    <div class="modal-body" style="text-align:justify;">
-                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                     <select class="form-control mr-sm-2" id="share_select" type="search" placeholder="Add people and groups" aria-label="Search" name="user_id[]" multiple >
-                      <% User.all.each do |user| %>
-                      <option value="<%= user.id %>"><%= user.email %></option>
-                      <% end %>
-                     </select>
-                   </div>
-                   <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="submit" class="btn btn-primary">Share</button>
-                   </div>
+                  <form action="<%= share_board_path(@board) %>" method="post" >
+                      <div class="modal-body" style="text-align:justify;">
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                         <select class="form-control mr-sm-2" id="share_select" type="search"  placeholder=“example@example.com” aria-label="Search" name="user_id[]" multiple >
+                          <% User.all.each do |user| %>
+                          <option value="<%= user.id %>"><%= user.email %></option>
+                          <% end %>
+                         </select>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary">Share</button>
+                     </div>
                   </form>
               </div>
             </div>
