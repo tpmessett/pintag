@@ -24,19 +24,19 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                    <form action="<%= share_board_path(@board) %>" method="post">
-                    <div class="modal-body" style="text-align:justify;">
-                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                     <select class="form-control mr-sm-2" id="share_select" type="search" placeholder="Add people and groups" aria-label="Search" name="user_id[]" multiple >
-                      <% User.all.each do |user| %>
-                      <option value="<%= user.id %>"><%= user.email %></option>
-                      <% end %>
-                     </select>
-                   </div>
-                   <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                     <button type="submit" class="btn btn-primary">Share</button>
-                   </div>
+                  <form action="<%= share_board_path(@board) %>" method="post" >
+                      <div class="modal-body" style="text-align:justify;">
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                         <select class="form-control mr-sm-2" id="share_select" type="search"  placeholder=“example@example.com” aria-label="Search" name="user_id[]" multiple >
+                          <% User.all.each do |user| %>
+                          <option value="<%= user.id %>"><%= user.email %></option>
+                          <% end %>
+                         </select>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary">Share</button>
+                     </div>
                   </form>
               </div>
             </div>
@@ -49,40 +49,67 @@
       <% @contents.each do |content| %>
       <div class="col-sm-4 d-flex align-items-stretch">
         <div class="flex-fill content-card card">
+
           <% if content.file_upload.attachment.present? %>
             <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('<%= rails_blob_url(content.file_upload) %>');">
           <% else  %>
             <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(<%= asset_path 'pin.jpg' %>);">
           <% end  %>
+            <div class="edit">
+              <%= link_to edit_content_path(content) do %><i class="far fa-edit"></i><% end %>
+            </div>
             <div class="delete">
-            <a>x</a>
-          </div>
+              <%= link_to content_path(content), method: :delete, data: {Confirm: "delete content?" } do %><i class="far fa-trash-alt"></i><% end %>
+            </div>
             <div class="circle-overlay">
               <% if content.link? %>
                 <i class="fas fa-link"></i>
+              <% elsif content.file_upload.content_type.include? "image" %>
+                <i class="fas fa-image"></i>
+              <% elsif content.file_upload.content_type.include? "msword" %>
+                <i class="far fa-file-alt"></i>
+              <% elsif content.file_upload.content_type.include? "document" %>
+                <i class="far fa-file-alt"></i>
+              <% elsif content.file_upload.content_type.include? "excel" %>
+                <i class="far fa-file-excel"></i>
+              <% elsif content.file_upload.content_type.include? "sheet" %>
+                <i class="far fa-file-excel"></i>
+              <% elsif content.file_upload.content_type.include? "powerpoint" %>
+                <i class="fas fa-file-powerpoint"></i>
+              <% elsif content.file_upload.content_type.include? "presentation" %>
+                <i class="fas fa-file-powerpoint"></i>
+              <% elsif content.file_upload.content_type.include? "pdf" %>
+                <i class="far fa-file-pdf"></i>
+              <% elsif content.file_upload.content_type.include? "html" %>
+                <i class="far fa-file-code"></i>
+              <% elsif content.file_upload.content_type.include? "csv" %>
+                <i class="far fa-file-code"></i>
               <% else %>
                 <i class="fas fa-info"></i>
               <% end %>
             </div>
           </div>
-        <div class="card-body">
+        <div class="content-body card-body">
           <h5 class="card-title"><%=content.name %></h5>
-          <p classs="card-text"><%=content.description %></p>
+          <p class="content_description card-text"><%=content.description %></p>
           <% if content.file_upload.attachment != nil %>
             <%= link_to "Show content", content.file_upload.service_url, target: :_blank, class: "btn btn-outline-primary"%>
           <% else %>
             <%= link_to "Show content", content.link, target: :_blank, class: "btn btn-outline-primary" %>
           <% end %>
-          <a><%= link_to "Edit content", edit_content_path(content) %></a>
         </div>
-        <div class="card-footer">
-            <% content.tags.each do |tag| %>
-            <div class="btn btn-tag">
-              <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
-            </div>
-            <% end %>
-            <span class="tag-display" style="margin-left: 10px;"> <%= link_to "Add tag", new_tag_path %></span>
+        <div class="card-footer d-flex">
+          <div>
+          <span class="tag-new" > <%= link_to new_tag_path do %><i class="fas fa-plus-circle"></i><% end %></span>
           </div>
+          <div>
+          <% content.tags.each do |tag| %>
+          <div class="btn btn-tag">
+            <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
+          </div>
+          <% end %>
+        </div>
+        </div>
         </div>
       </div>
       <% end %>

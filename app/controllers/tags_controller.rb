@@ -9,8 +9,8 @@ class TagsController < ApplicationController
   end
 
   def new
-    authorize @tag
     @tag = Tag.new
+    authorize @tag
   end
 
   def create

@@ -34,6 +34,13 @@
 
 }
 
+.fa-plus-circle {
+  color: $violet;
+  font-size: 24px;
+  padding-top: 8px;
+  margin-right: 8px;
+}
+
 .btn-tag {
   border-radius: 50px;
   border: 1px solid;
@@ -53,6 +60,21 @@
 }
 }
 
+.content-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content_description {
+  max-height: 60px;
+  overflow:auto;
+}
+
+.card-footer {
+  height: 60px;
+  overflow:auto;
+}
 
 .content-card:hover {
   box-shadow: none;
@@ -99,6 +121,15 @@ a {
   cursor: pointer;
 }
 
+.edit {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  cursor: pointer;
+}
+
 #add-content {
   font-size: 72px;
   color: #474448;
@@ -127,3 +158,5 @@ a {
   opacity: 0.9;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
  }
+
+
