@@ -7,7 +7,8 @@
         <h5><%= board.name %></h5>
       </div>
       <div class="card-body card-body-boards ">
-        <p><%= board.description.truncate(45) %></p>
+        <p><%= board.description.truncate(35) %></p>
+
         <%= link_to board_path(board) do %>
         <p class="btn btn-primary btn-md" id="view-board" style="color: #FCFCFC; margin: 0px;">View This Board</p>
         <% end %>
