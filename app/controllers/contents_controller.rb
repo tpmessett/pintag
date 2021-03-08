@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   def new
     @content = Content.new
     @board = Board.find(params[:board_id])
-    @tags = Tag.all
+    @tags = policy_scope(Tag)
     authorize @content
   end
 
