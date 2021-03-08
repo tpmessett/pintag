@@ -52,6 +52,7 @@
           <div class="board-image">
             <div class="edit">
               <%= link_to edit_content_path(content) do %><i class="far fa-edit"></i><% end %>
+
             </div>
             <div class="delete">
               <%= link_to content_path(content), method: :delete, data: {Confirm: "delete content?" } do %><i class="far fa-trash-alt"></i><% end %>
