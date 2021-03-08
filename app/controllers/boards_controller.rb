@@ -53,6 +53,13 @@ class BoardsController < ApplicationController
     redirect_to boards_path
   end
 
+  def share
+    params[:user_id].each do |id|
+      BoardPermission.create(board_id: params[:id], user_id: id)
+    end
+    redirect_to board_path(params[:id]), notice: "Shared"
+  end
+
   private
 
   def board_params
