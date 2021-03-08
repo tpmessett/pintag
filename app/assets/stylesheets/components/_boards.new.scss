@@ -68,3 +68,14 @@ color: g474448;
   width: 100% !important;
 }
 
+.select2-container--default .select2-selection--multiple{
+  padding:8px;
+  border:none !important;
+  box-shadow: 1px 1px 2px #e6e8e6;
+  background:#62bcba;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+
