@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "select2";
 import { LoginToggle } from '../components/login_form';
 import { RegCheck } from '../components/login_form';
 // Internal imports, e.g:
@@ -44,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
     loadDynamicBannerText();
     initUpdateNavbarOnScroll();
   }
+  $('#share_select').select2();
 });
