@@ -45,5 +45,7 @@ document.addEventListener('turbolinks:load', () => {
     loadDynamicBannerText();
     initUpdateNavbarOnScroll();
   }
-  $('#share_select').select2();
+  $('#share_select').select2({
+    tags: true
+  });
 });
