@@ -5,7 +5,7 @@
   <%= f.input :description %>
   <%= f.input :link %>
   <%= f.input :file_upload, as: :file %>
-  <%= f.input :tags, collection: @tags, input_html: { multiple: true } %>
+  <%= f.association :tags, collection: @tags, input_html: { id: "share_select", multiple: true } %>
   <%= f.submit "Update content", class: "btn btn-primary" %>
   <%= link_to "Delete content", content_path(@content), method: :delete, data: {Confirm: "delete content?"}, class: "btn btn-outline-danger" %>
   <% end %>
