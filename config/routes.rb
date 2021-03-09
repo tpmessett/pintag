@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   end
   resources :contents, only: [:destroy, :edit, :update]
   resources :tags
+
+    namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :boards, only: [ :show ]
+    end
+  end
 end
