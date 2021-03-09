@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :contents, only: [:destroy, :edit, :update]
+<<<<<<< HEAD
   resources :tags
 
     namespace :api, defaults: { format: :json } do
@@ -16,4 +17,9 @@ Rails.application.routes.draw do
       resources :boards, only: [ :show ]
     end
   end
+=======
+  resources :tags, only: [:edit, :update, :destroy]
+  get 'content/:id/tags/new', to: 'tags#new', as: :new_content_tag
+  post 'content/:id/tags/create', to: 'tags#create', as: :create_content_tag
+>>>>>>> 28f757395397b63fb885d1ec3c1966ff01453134
 end

@@ -58,7 +58,7 @@
       <div class="col-sm-4 d-flex align-items-stretch">
         <div class="flex-fill content-card card">
 
-          <% if content.file_upload.attachment.present? %>
+          <% if (content.file_upload.attachment.present?) && (content.file_upload.content_type.include? "image") %>
             <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('<%= rails_blob_url(content.file_upload) %>');">
           <% else  %>
             <div class="board-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url(<%= asset_path 'pin.jpg' %>);">
@@ -73,6 +73,8 @@
             <div class="circle-overlay">
               <% if content.link? %>
                 <i class="fas fa-link"></i>
+                <% elsif !content.file_upload.present? %>
+                <i class="fas fa-info"></i>
               <% elsif content.file_upload.content_type.include? "image" %>
                 <i class="fas fa-image"></i>
               <% elsif content.file_upload.content_type.include? "msword" %>
@@ -110,7 +112,7 @@
         </div>
         <div class="card-footer d-flex">
           <div>
-          <span class="tag-new" > <%= link_to new_tag_path do %><i class="fas fa-plus-circle"></i><% end %></span>
+          <span class="tag-new" > <%= link_to new_content_tag_path(content) do %><i class="fas fa-plus-circle"></i><% end %></span>
           </div>
           <div>
           <% content.tags.each do |tag| %>
@@ -125,4 +127,3 @@
       <% end %>
     </div>
   </div>
-
