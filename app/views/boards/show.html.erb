@@ -106,7 +106,7 @@
           <div>
           <% content.tags.each do |tag| %>
           <div class="btn btn-tag">
-            <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
+          <span class=“tag-display”> <%= link_to board_path(search: tag.name, searchtype: “tag”) do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>
