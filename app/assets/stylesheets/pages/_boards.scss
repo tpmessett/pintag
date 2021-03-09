@@ -24,12 +24,6 @@
   overflow: hidden;
 }
 
-.tag-display a {
-  color: $violet;
-
-}
-
-
 .btn-outline-primary:hover {
   color: white;
 
@@ -48,16 +42,16 @@
   border-color: $violet;
   color: $violet;
   margin-bottom: 10px;
-  .tag-display a {
-  color: $violet;
+  .tag-display  a {
+  color: $violet !important;
 }
 }
 
 .btn-tag:hover {
-  color: white;
+  color: white !important;
   background-color: $violet;
   .tag-display a {
-  color: white
+  color: $white !important;
 }
 }
 
@@ -109,9 +103,9 @@
   color: #62bcba;
 }
 
-a {
-  vertical-align: middle
-}
+// a {
+//   vertical-align: middle
+// }
 
 .delete {
   color: white;
@@ -164,6 +158,15 @@ a {
     background: #fcfcfc !important;
     border: 1px solid #ced4da !important;
     color: #495057 !important;
+ }
+
+ .tag-button {
+   color: $violet !important;
+ }
+
+
+ .tag-button:hover {
+   color: #fff !important;
  }
 
 

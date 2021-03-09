@@ -27,11 +27,11 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @tags = Tag.all
     @contents = @board.contents
-    authorize @board 
+    authorize @board
      if params[:extension_filter].present?
       @contents = @contents.select do | content |
         next unless content.file_upload.attached?
-       
+
         content.file_upload.content_type.include?(params[:extension_filter][:extenion])
       end
      end
@@ -69,6 +69,8 @@ class BoardsController < ApplicationController
   end
 
   def share
+    @board = Board.find(params[:id])
+    authorize @board
     params[:user_id].each do |id|
       BoardPermission.create(board_id: params[:id], user_id: id)
     end
