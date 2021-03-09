@@ -46,6 +46,15 @@
   <!-- body -->
   <div class="container board-list">
     <div class="row">
+      <div class=" col-sm-4 d-flex align-items-stretch">
+        <div class="content-add-card content-card flex-fill">
+          <%= link_to new_board_content_path(@board.id) do %>
+          <div class="new-board" style="height: 100%; ">
+            <p id="add-content">+<span style="font-size: 16px;">Add New Content To This Board</span></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
       <% @contents.each do |content| %>
       <div class="col-sm-4 d-flex align-items-stretch">
         <div class="flex-fill content-card card">
@@ -116,14 +125,5 @@
         </div>
       </div>
       <% end %>
-      <div class=" col-sm-4 d-flex align-items-stretch">
-        <div class="content-add-card content-card flex-fill">
-          <%= link_to new_board_content_path(@board.id) do %>
-          <div class="new-board" style="height: 100%;">
-            <p id="add-content">+<span style="font-size: 16px;">Add New Content To This Board</span></p>
-          </div>
-          <% end %>
-        </div>
-      </div>
     </div>
   </div>
