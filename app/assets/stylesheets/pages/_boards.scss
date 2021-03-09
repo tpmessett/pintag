@@ -171,8 +171,21 @@
 
 
 .filter-bar {
+  display:flex;
+  align-items: center;
 
-  width: 300px;
-  padding-left: 100px;
+}
 
+.filter_2 {
+
+  color: #212529;
+  background-color: #62bcba;
+  border-color: #62bcba;
+  margin-bottom: 1rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

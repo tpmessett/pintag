@@ -12,5 +12,14 @@ $violet: #B18FCF;
 $white: #FCFCFC;
 
 
+.green {
+    color:#62bcba; 
+    &:hover{  
+    color: #3f9391;
+    cursor: pointer;
+    } 
+}
+
+
 
 
