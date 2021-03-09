@@ -5,13 +5,13 @@
       <H3><%= @board.name %></H3>
       <p><%= @board.description %></p>
       <p>
-          <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %>
+          <%# <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %> 
           <%= link_to 'Edit Board', edit_board_path(@board), class: "btn btn-outline-primary" %>
          <a href = "#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-primary">
             Share
           </a>
           <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
-          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
+          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"] %>
           <%= f.submit %>
           <% end %>
           
@@ -122,7 +122,7 @@
           <div>
           <% content.tags.each do |tag| %>
           <div class="btn btn-tag">
-          <span class=“tag-display”> <%= link_to board_path(search: tag.name, searchtype: “tag”) do %> <%= tag.name %> <%end%></span>
+          <span class=“tag-display”> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>
