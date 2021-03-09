@@ -92,7 +92,7 @@
           </div>
         <div class="content-body card-body">
           <h5 class="card-title"><%=content.name %></h5>
-          <p class="content_description card-text"><%=content.description %></p>
+          <p class="card_content_description card-text"><%=content.description %></p>
           <% if content.file_upload.attachment != nil %>
             <%= link_to "Show content", content.file_upload.service_url, target: :_blank, class: "btn btn-outline-primary"%>
           <% else %>
