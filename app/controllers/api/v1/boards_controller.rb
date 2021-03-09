@@ -1,4 +1,5 @@
-class Api::V1::RestaurantsController < Api::V1::BaseController
+class Api::V1::BoardsController < Api::V1::BaseController
+acts_as_token_authentication_handler_for User
 before_action :set_board, only: [ :show ]
 
   def show
@@ -7,5 +8,9 @@ before_action :set_board, only: [ :show ]
   def set_board
     @board = Board.find(params[:id])
     authorize @board
+  end
+
+  def index
+    @boards = policy_scope(Board)
   end
 end
