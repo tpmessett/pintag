@@ -10,6 +10,11 @@
          <a href = "#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-primary">
             Share
           </a>
+          <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
+          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
+          <%= f.submit %>
+          <% end %>
+          
       </p>
     </div>
   </div>
