@@ -1,20 +1,18 @@
 
 <div class="page-background">
-<div class="container">
-<div class="col-sm-6 offset-sm-3">
-<div class="newclass">
-<div class="container2 bg-white p-5">
-
-  <h3 class="text-center" style="padding-top: 30px;">Create new tag</h3>
-  <%= simple_form_for(@tag) do |f| %>
-  <%= f.input :name %>
-  <div class= "centralize">
-  <%= f.submit "Create tag", class: "centralize btn btn-primary" %>
-  </div>
-  <% end %>
-  
-  </div>
-  </div>
-  </div>
+  <div class="container">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="newclass">
+        <div class="container2 bg-white p-5">
+          <h3 class="text-center" style="padding-top: 30px;">Create new tag</h3>
+          <%= simple_form_for [@content, @tag], url: create_content_tag_path, method: :post do |f| %>
+          <%= f.input :name %>
+          <div class= "centralize">
+            <%= f.submit "Create tag", class: "centralize btn btn-primary" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

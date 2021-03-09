@@ -103,7 +103,7 @@
         </div>
         <div class="card-footer d-flex">
           <div>
-          <span class="tag-new" > <%= link_to new_tag_path do %><i class="fas fa-plus-circle"></i><% end %></span>
+          <span class="tag-new" > <%= link_to new_content_tag_path(content) do %><i class="fas fa-plus-circle"></i><% end %></span>
           </div>
           <div>
           <% content.tags.each do |tag| %>
