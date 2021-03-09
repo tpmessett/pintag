@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :contents, only: [:destroy, :edit, :update]
-  resources :tags
+  resources :tags, only: [:edit, :update, :destroy]
+  get 'content/:id/tags/new', to: 'tags#new', as: :new_content_tag
+  post 'content/:id/tags/create', to: 'tags#create', as: :create_content_tag
 end
