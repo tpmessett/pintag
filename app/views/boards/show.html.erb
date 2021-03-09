@@ -9,6 +9,13 @@
          <a href = "#" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-outline-primary">
             Share
           </a>
+          <div class="filter-bar"> <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
+
+          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"], label: false %>
+          <%= f.submit class: "filter" %>
+          <% end %>
+          </div>
+          
       </p>
     </div>
   </div>
@@ -102,7 +109,7 @@
           </div>
         <div class="content-body card-body">
           <h5 class="card-title"><%=content.name %></h5>
-          <p class="content_description card-text"><%=content.description %></p>
+          <p class="card_content_description card-text"><%=content.description %></p>
           <% if content.file_upload.attachment != nil %>
             <%= link_to "Show content", content.file_upload.service_url, target: :_blank, class: "btn btn-outline-primary"%>
           <% else %>
@@ -116,7 +123,7 @@
           <div>
           <% content.tags.each do |tag| %>
           <div class="btn btn-tag">
-            <span class="tag-display"> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
+          <span class=“tag-display”> <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>
