@@ -27,6 +27,9 @@ gem 'redis', '~> 4.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# rack-cors
+gem 'rack-cors', :require => 'rack/cors'
+
 # AWS s3 Gem
 gem "aws-sdk-s3", require: false
 
