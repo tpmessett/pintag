@@ -5,6 +5,7 @@ class BoardsController < ApplicationController
     @boards = policy_scope(Board)
     @shared_boards = current_user.shared_boards
     @photos = Unsplash::Photo.random(count: 10, query: "startup&w=200")
+    
   end
 
   def new
