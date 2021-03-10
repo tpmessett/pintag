@@ -11,12 +11,14 @@
             share
           </span>
         </a>
-          <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded material-icons"%>
 
-          <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
+          <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded material-icons"%>
+          <div class="filter-bar"> <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
+
           <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
           <%= f.submit 'submit' %>
           <% end %>
+        </div>
       </div>
 
       </p>
@@ -125,9 +127,9 @@
           </div>
           <div>
           <% content.tags.each do |tag| %>
-          <div class="btn btn-tag">
+          <div class="tag-button btn btn-tag">
           <span class=“tag-display”>
-            <%= link_to board_path(search: tag.name, searchtype: tag), class: "tag-button" do %> <%= tag.name %> <%end%></span>
+            <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>
