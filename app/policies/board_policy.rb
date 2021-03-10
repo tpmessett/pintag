@@ -32,4 +32,7 @@ class BoardPolicy < ApplicationPolicy
   def destroy?
     return true
   end
+  def share?
+    return true
+  end
 end

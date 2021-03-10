@@ -75,6 +75,8 @@ class BoardsController < ApplicationController
   end
 
   def share
+    @board = Board.find(params[:id])
+    authorize @board
     params[:user_id].each do |id|
       BoardPermission.create(board_id: params[:id], user_id: id)
     end
