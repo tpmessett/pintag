@@ -5,8 +5,6 @@
       <H3><%= @board.name %></H3>
       <p><%= @board.description %></p>
 
-      
-        
 
        <div class="flex-container">
           <div class="filter-bar"> 
@@ -17,15 +15,16 @@
            <%= f.button :submit, 'Submit', class: 'filter_2 ml-2' %>
             <% end %>
            
-          <span class="green material-icons-outlined material-icons ml-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">
+            
+        <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+          <span class="material-icons-rounded material-icons">
             share
           </span>
-         
-          <%= link_to 'edit', edit_board_path(@board), class: "material-icons-outlined material-icons ml-3 mb-3"%>
+        </a>
+
+          <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded material-icons"%>
         
           </div>
-
-       
       </div>
     </div>
   </div>
@@ -132,9 +131,9 @@
           </div>
           <div>
           <% content.tags.each do |tag| %>
-          <div class="btn btn-tag">
+          <div class="tag-button btn btn-tag">
           <span class=“tag-display”>
-            <%= link_to board_path(search: tag.name, searchtype: tag), class: "tag-button" do %> <%= tag.name %> <%end%></span>
+            <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>

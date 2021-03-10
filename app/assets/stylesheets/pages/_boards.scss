@@ -160,12 +160,12 @@
     color: #495057 !important;
  }
 
- .tag-button {
+ .tag-button a {
    color: $violet !important;
  }
 
 
- .tag-button:hover {
+ .tag-button:hover a {
    color: #fff !important;
  }
 
@@ -189,3 +189,4 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
