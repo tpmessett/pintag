@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 # slack integration
 gem 'async-websocket', '~>0.8.0'
+gem 'slack-ruby-client'
 gem 'slack-ruby-bot'
 # API
 gem 'simple_token_authentication'

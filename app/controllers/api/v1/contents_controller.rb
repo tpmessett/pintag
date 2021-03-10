@@ -8,7 +8,7 @@ class Api::V1::ContentsController < Api::V1::BaseController
     tags = find_or_create_tag
     if Tag.where(id: tags)
       @content.tags = Tag.where(id: tags)
-      if @content.save
+      if @content.save!
         render json: {
           message: "success"
         }, status: 201

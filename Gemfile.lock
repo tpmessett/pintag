@@ -345,6 +345,7 @@ DEPENDENCIES
   simple_form
   simple_token_authentication
   slack-ruby-bot
+  slack-ruby-client
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
