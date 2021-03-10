@@ -28,6 +28,14 @@
  padding: 16px
 }
 
+.head-text h1 {
+  font-size: 4.5rem
+}
+
+.head-text h3 {
+  margin-bottom: 24px
+}
+
 body {
   background-color: #fcfcfc;
   color: #474448;
@@ -66,7 +74,6 @@ body {
 }
 
 .explainer {
-  flex-basis: 25em;
   text-align: center;
   margin-left: 6em;
   margin-top: 88px;
@@ -249,3 +256,87 @@ body {
 .typed-cursor {
   display: none;
 }
+
+@media (min-width: 100px) and (max-width: 575px) {
+  #type-circles {
+    display: none;
+  }
+
+  .circle-one {
+    display: none
+  }
+  .circle-two {
+    display: none
+  }
+  .circle-three {
+    display: none
+  }
+  .circle-four {
+    display: none
+  }
+  .head-text h1 {
+    font-size: 2.5rem
+  }
+
+  .head-text h3 {
+    font-size: 1.5rem
+  }
+
+  .usps {
+    flex-direction: column;
+  }
+
+  .details {
+    flex-direction: column;
+  }
+  .explainer {
+    margin: 0 auto;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 991px){
+  #type-circles {
+    display: none;
+  }
+
+  .circle-one {
+    display: none
+  }
+  .circle-two {
+    display: none
+  }
+  .circle-three {
+    display: none
+  }
+  .circle-four {
+    display: none
+  }
+  .head-text h1 {
+  font-size: 3rem
+  }
+
+  .head-text h3 {
+    font-size: 1.5rem
+  }
+
+  .usps {
+    flex-direction: column;
+  }
+
+  .details {
+    flex-direction: column;
+  }
+
+  .explainer {
+    margin: 0 auto;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px){
+  .explainer {
+  flex-basis: 25em;
+  }
+}
+
