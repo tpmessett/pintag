@@ -27,14 +27,20 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @tags = Tag.all
     @contents = @board.contents
-    authorize @board
+   
+    authorize @board 
      if params[:extension_filter].present?
       @contents = @contents.select do | content |
-        next unless content.file_upload.attached?
-
-        content.file_upload.content_type.include?(params[:extension_filter][:extenion])
+        if content.file_upload.attached?
+         content.file_upload.content_type.include?(params[:extension_filter][:extension])
+        elsif content.link?
+          params[:extension_filter][:extension] == "link"
+        else 
+          next
+        end
       end
      end
+    
     if params[:searchtype] == "all"
       @contents = PgSearch.multisearch(params[:search])
 

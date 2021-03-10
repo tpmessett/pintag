@@ -4,6 +4,7 @@
     <div class ="container head-text">
       <H3><%= @board.name %></H3>
       <p><%= @board.description %></p>
+
       <div>
          <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
           <span class="material-icons-rounded material-icons">
@@ -16,8 +17,9 @@
           <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
           <%= f.submit 'submit' %>
           <% end %>
-
       </div>
+
+      </p>
     </div>
   </div>
 
