@@ -14,7 +14,7 @@
           <span class="material-icons-outlined material-icons" >
           <%= link_to 'edit', edit_board_path(@board), class: "material-icons-outlined material-icons"%>
           </span>
-       
+
           <div class="filter-bar"> <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
 
           <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"], label: false %>
@@ -128,9 +128,9 @@
           </div>
           <div>
           <% content.tags.each do |tag| %>
-          <div class="btn btn-tag">
+          <div class="tag-button btn btn-tag">
           <span class=“tag-display”>
-            <%= link_to board_path(search: tag.name, searchtype: tag), class: "tag-button" do %> <%= tag.name %> <%end%></span>
+            <%= link_to board_path(search: tag.name, searchtype: "tag") do %> <%= tag.name %> <%end%></span>
           </div>
           <% end %>
         </div>
