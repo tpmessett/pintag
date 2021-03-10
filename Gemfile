@@ -3,7 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# slack integration
+gem 'async-websocket', '~>0.8.0'
+gem 'slack-ruby-bot'
+# API
 gem 'simple_token_authentication'
+gem 'rack-cors'
+#Search
 gem 'pg_search', '~> 2.3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
