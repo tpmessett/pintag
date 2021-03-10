@@ -79,3 +79,28 @@ color: g474448;
   box-shadow: none !important;
 }
 
+.material-icons-rounded {
+  border-radius: 50px;
+  padding: 8px;
+  background:#62bcba;
+  color: #fff;
+}
+
+.material-icons-rounded:hover {
+  background:#fff;
+  color: #62bcba;
+}
+
+.position-icons-share {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.position-icons-edit {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+
