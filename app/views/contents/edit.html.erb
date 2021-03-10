@@ -1,12 +1,14 @@
-<div class="container" style="margin-top: 60px;">
-  <h3 class="text-center" style="padding-top: 30px;">Edit content:</h3>
-  <%= simple_form_for [@board, @content] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :link %>
-  <%= f.input :file_upload, as: :file %>
-  <%= f.association :tags, collection: @tags, input_html: { id: "share_select", multiple: true } %>
-  <%= f.submit "Update content", class: "btn btn-primary" %>
-  <%= link_to "Delete content", content_path(@content), method: :delete, data: {Confirm: "delete content?"}, class: "btn btn-outline-danger" %>
-  <% end %>
+<div class="page-background">
+  <div class="container" style="margin-top: 60px;">
+    <h3 class="text-center" style="padding-top: 30px;">Edit content:</h3>
+    <%= simple_form_for [@board, @content] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :link %>
+    <%= f.input :file_upload, as: :file %>
+    <%= f.association :tags, collection: @tags, input_html: { id: "share_select", multiple: true } %>
+    <%= f.submit "Update content", class: "btn btn-primary" %>
+    <%= link_to "Delete content", content_path(@content), method: :delete, data: {Confirm: "delete content?"}, class: "btn btn-outline-danger" %>
+    <% end %>
+  </div>
 </div>
