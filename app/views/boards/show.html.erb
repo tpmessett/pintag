@@ -4,9 +4,9 @@
     <div class ="container head-text">
       <H3><%= @board.name %></H3>
       <p><%= @board.description %></p>
-      <div>
-        <%= link_to "Add Content", new_board_content_path(@board.id), class: "btn btn-primary" %>
-         <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+
+      <p>
+        <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
           <span class="material-icons-outlined material-icons">
             share
           </span>
@@ -14,12 +14,15 @@
           <span class="material-icons-outlined material-icons" >
           <%= link_to 'edit', edit_board_path(@board), class: "material-icons-outlined material-icons"%>
           </span>
-          <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
-          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
-          <%= f.submit 'submit' %>
-          <% end %>
+       
+          <div class="filter-bar"> <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
 
-      </div>
+          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"], label: false %>
+          <%= f.submit class: "filter" %>
+          <% end %>
+          </div>
+          
+      </p>
     </div>
   </div>
 

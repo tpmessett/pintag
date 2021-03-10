@@ -14,6 +14,7 @@ class ContentsController < ApplicationController
     tags = find_or_create_tag
     if Tag.where(id: tags)
       @content.tags = Tag.where(id: tags)
+      raise
       if @content.save
         redirect_to board_path(@board)
       else
