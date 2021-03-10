@@ -5,23 +5,27 @@
       <H3><%= @board.name %></H3>
       <p><%= @board.description %></p>
 
-      <div>
-         <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
+
+       <div class="flex-container">
+          <div class="filter-bar"> 
+            <%= simple_form_for :extension_filter, url: board_path(@board), html: {class: "flex-container"}, method: :get do |f| %> 
+
+           <%= f.input :extension,  collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"], label: false %>
+      
+           <%= f.button :submit, 'Submit', class: 'filter_2 ml-2' %>
+            <% end %>
+           
+            
+        <a href = "#" data-toggle="modal" data-target="#exampleModalCenter">
           <span class="material-icons-rounded material-icons">
             share
           </span>
         </a>
 
           <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded material-icons"%>
-          <div class="filter-bar"> <%= simple_form_for :extension_filter, url: board_path(@board), method: :get do |f| %>
-
-          <%= f.input :extension, collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv"] %>
-          <%= f.submit 'submit' %>
-          <% end %>
-        </div>
+        
+          </div>
       </div>
-
-      </p>
     </div>
   </div>
 
