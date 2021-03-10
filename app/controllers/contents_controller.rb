@@ -7,6 +7,7 @@ class ContentsController < ApplicationController
   end
 
   def create
+    client2 = Slack::Web::Client.new
     @board = Board.find(params[:board_id])
     @content = Content.new(content_params)
     @content.board = @board
@@ -14,9 +15,13 @@ class ContentsController < ApplicationController
     tags = find_or_create_tag
     if Tag.where(id: tags)
       @content.tags = Tag.where(id: tags)
-      raise
       if @content.save
         redirect_to board_path(@board)
+        if @content.link?
+          client2.chat_postMessage(channel: '#general', text: "#{@content.name}, has been added to #{@board.name}. view the article at #{@content.link}. #{@content.description}", as_user: true)
+        else
+          client2.chat_postMessage(channel: '#general', text: "#{@content.name}, has been added to #{@board.name}. Find out more at https://www.pintag.app#{board_path(@board)}. #{@content.description}", as_user: true)
+        end
       else
         render :new
       end
