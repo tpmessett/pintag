@@ -29,6 +29,10 @@ class BoardPolicy < ApplicationPolicy
     return true
   end
 
+  def send_to_slack?
+    return true
+  end
+
   def destroy?
     return true
   end

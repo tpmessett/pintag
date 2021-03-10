@@ -27,20 +27,20 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
     @tags = Tag.all
     @contents = @board.contents
-   
-    authorize @board 
+
+    authorize @board
      if params[:extension_filter].present?
       @contents = @contents.select do | content |
         if content.file_upload.attached?
          content.file_upload.content_type.include?(params[:extension_filter][:extension])
         elsif content.link?
           params[:extension_filter][:extension] == "link"
-        else 
+        else
           next
         end
       end
      end
-    
+
     if params[:searchtype] == "all"
       @contents = PgSearch.multisearch(params[:search])
 
@@ -81,6 +81,14 @@ class BoardsController < ApplicationController
       BoardPermission.create(board_id: params[:id], user_id: id)
     end
     redirect_to board_path(params[:id]), notice: "shared"
+  end
+
+  def send_to_slack
+    client = Slack::Web::Client.new
+    @board = Board.find(params[:board_id])
+    authorize @board
+    client.chat_postMessage(channel: '#general', text: "Checkout #{@board.name}, #{@board.description} at https://pintag.app#{board_path@board}", as_user: true)
+    redirect_to board_path(@board), notice: "shared"
   end
 
   private
