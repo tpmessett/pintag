@@ -62,6 +62,20 @@ class ContentsController < ApplicationController
     @content = Content.find(params[:id])
   end
 
+  def send_content_to_slack
+    client = Slack::Web::Client.new
+    @message = params[:message]
+    @content = Content.find(params[:content_id])
+    if @content.link?
+      @text = "#{current_user.email} shared #{@content.name}: #{@content.link} with the message: #{@message}"
+    else
+      @text = "#{current_user.email} shared #{@content.name}: #{@content.file_upload.service_url} with the message: #{@message}"
+    end
+    client.chat_postMessage(channel: '#general', text: @text, as_user: true)
+    redirect_to board_path(@content.board_id), notice: "shared"
+    authorize @content
+  end
+
   def find_or_create_tag
     tags = []
     if params[:content][:tags].present?

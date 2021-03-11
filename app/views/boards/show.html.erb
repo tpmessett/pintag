@@ -23,7 +23,12 @@
         </a>
 
           <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded align-icons material-icons"%>
-          <%= link_to board_send_to_slack_path(@board), class: "material-icons-rounded align-icons material-icons" do %> <i class="fab fa-slack"></i> <%end%>
+
+          <a href = "#" data-toggle="modal" data-target="#slackModalCenter">
+            <span class="material-icons-rounded align-icons material-icons">
+              <i class="fab fa-slack"></i>
+            </span>
+          </a>
           </div>
       </div>
     </div>
@@ -57,6 +62,31 @@
             </div>
           </div>
 
+  <!-- slack board modal -->
+
+           <div class="modal fade" id="slackModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Share on slack</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  <form action="<%= board_send_to_slack_path(@board) %>" method="post" >
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                      <div class="modal-body" style="text-align:justify;">
+                        <input class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" />
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary">Share on slack</button>
+                     </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+
 
   <!-- body -->
   <div class="container board-list">
@@ -71,6 +101,32 @@
         </div>
       </div>
       <% @contents.each do |content| %>
+
+      <!-- slack content modal -->
+
+           <div class="modal fade" id="modal-<%= content.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Share on slack</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                  <form action="<%= content_send_content_to_slack_path(content) %>" method="post" >
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                      <div class="modal-body" style="text-align:justify;">
+                        <input class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" />
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary">Share on slack</button>
+                     </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+
       <div class="col-sm-4 d-flex align-items-stretch">
         <div class="flex-fill content-card card">
 
@@ -85,6 +141,12 @@
             </div>
             <div class="delete">
               <%= link_to content_path(content), method: :delete, data: {Confirm: "delete content?" } do %><i class="far fa-trash-alt"></i><% end %>
+            </div>
+
+            <div class="slack">
+              <a href = "#" data-toggle="modal" data-target="#modal-<%= content.id %>">
+                  <i class="fab fa-slack"></i>
+              </a>
             </div>
             <div class="circle-overlay">
               <% if content.link? %>
