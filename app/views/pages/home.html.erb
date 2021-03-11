@@ -6,7 +6,7 @@
       <!-- Key text to type on page -->
       <h3 style="color: white; height: 20px;"><span id="banner-typed-text"></span></h3>
       <% if user_signed_in? %>
-        <%= link_to 'View Your Boards', boards_path, class: "btn btn-primary" %>
+        <%= link_to 'View Your Boards', boards_path, class: "btn-font btn btn-primary" %>
       <% else %>
       <h3>
         <%= link_to 'Get Started', new_user_registration_path(reg: "true"), class: "btn btn-primary" %>
