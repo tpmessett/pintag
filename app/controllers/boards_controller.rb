@@ -5,6 +5,7 @@ class BoardsController < ApplicationController
     @boards = policy_scope(Board)
     @shared_boards = current_user.shared_boards
     @photos = Unsplash::Photo.random(count: 10, query: "startup&w=200")
+
   end
 
   def new
@@ -85,9 +86,11 @@ class BoardsController < ApplicationController
 
   def send_to_slack
     client = Slack::Web::Client.new
+    @message = params[:message]
     @board = Board.find(params[:board_id])
+    @text = "#{current_user.email} shared #{@board.name}, from https://pintag.app#{board_path @board} with the message: #{@message}"
     authorize @board
-    client.chat_postMessage(channel: '#general', text: "Checkout #{@board.name}, #{@board.description} at https://pintag.app#{board_path@board}", as_user: true)
+    client.chat_postMessage(channel: '#general', text: @text, as_user: true)
     redirect_to board_path(@board), notice: "shared"
   end
 

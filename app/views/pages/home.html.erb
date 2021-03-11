@@ -2,16 +2,18 @@
 <!-- Parralax header image -->
 <div class="header">
   <div class ="container head-text">
-      <h3 style="color: white;">Welcome to Pintag</h3>
+      <h1 style="color: white;">Welcome to Pintag</h1>
       <!-- Key text to type on page -->
-      <p style="color: white; height: 20px;"><span id="banner-typed-text"></span></p>
-
-      <p>
+      <h3 style="color: white; height: 20px;"><span id="banner-typed-text"></span></h3>
+      <% if user_signed_in? %>
+        <%= link_to 'View Your Boards', boards_path, class: "btn btn-primary" %>
+      <% else %>
+      <h3>
         <%= link_to 'Get Started', new_user_registration_path(reg: "true"), class: "btn btn-primary" %>
 
         <%= link_to "Login", new_user_registration_path, class: "btn btn-outline-primary" %>
-      </p>
-
+      </h3>
+      <% end %>
   </div>
 </div>
 <div class="container">
@@ -50,7 +52,7 @@
     </div>
   </div>
   <div class="details d-flex justify-content-between">
-    <div class=image-holder>
+    <div id="type-circles" class=image-holder>
       <div class="circle-one">
         <span id="videos">Videos</span>
       </div>
