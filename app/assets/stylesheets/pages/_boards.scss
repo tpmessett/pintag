@@ -26,8 +26,18 @@
 
 .btn-outline-primary:hover {
   color: white;
-
 }
+
+.btn-primary {
+  color: #fcfcfc;
+  border: none;
+}
+
+.btn-primary:hover {
+  background:#69d6d4;
+  color: #fcfcfc;
+}
+
 
 .fa-plus-circle {
   color: $violet;
