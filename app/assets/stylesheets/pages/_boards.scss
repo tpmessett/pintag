@@ -189,10 +189,16 @@
 
 .filter_2 {
 
-  color: #212529;
-  background-color: #62bcba;
-  border-color: #62bcba;
+  color: #fcfcfc;
+  background-color: $violet;
+  border-color: $violet;
   margin-bottom: 1rem;
+  border-radius: 30px;
+}
+
+.filter_2:hover {
+  color: #fcfcfc;
+  background:#cfaded;
 }
 
 .flex-container {
@@ -206,9 +212,9 @@
 }
 
 .rounded-slack {
-  background-color: #62bcba;
+  background-color: #b18fcf;
   border-radius: 50%;
-  color: #fff;
+  color: #fcfcfc;
   padding: 11px;
   margin-bottom: 16px;
   margin-left: 8px;
@@ -218,9 +224,12 @@
 }
 .rounded-slack:hover {
   background-color: #fcfcfc;
-  color: #62bcba;
+  color: #b18fcf;
   }
 
+  .dropdown-color{
+    background: $violet;
+  }
 
 .card-links {
   height: 0px;
