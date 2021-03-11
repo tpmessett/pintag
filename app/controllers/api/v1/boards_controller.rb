@@ -12,5 +12,6 @@ before_action :set_board, only: [ :show ]
 
   def index
     @boards = policy_scope(Board)
+    @tags = policy_scope(Tag)
   end
 end
