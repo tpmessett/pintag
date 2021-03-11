@@ -32,4 +32,8 @@ class ContentPolicy < ApplicationPolicy
   def destroy?
     return true
   end
+
+  def send_content_to_slack?
+    return true
+  end
 end
