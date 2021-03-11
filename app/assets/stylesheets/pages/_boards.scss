@@ -103,6 +103,11 @@
   color: #62bcba;
 }
 
+.fa-slack {
+  font-size: 23px;
+
+}
+
 // a {
 //   vertical-align: middle
 // }
@@ -213,8 +218,10 @@
   margin-bottom: 16px;
   margin-left: 8px;
   font-size: 1rem;
-  padding-left: 13px;
-  padding-right: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8.5px;
+  padding-bottom: 8.5px;
 }
 .rounded-slack:hover {
   background-color: #fcfcfc;
