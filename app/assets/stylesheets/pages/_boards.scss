@@ -228,3 +228,14 @@
   z-index: 7;
   width: 100%;
 }
+.alert-info {
+  color: #fcfcfc;
+  background-color: $violet;
+  border-color: $violet;
+}
+
+.alert-info:hover {
+  color:$violet ;
+  background-color: #fcf0f7;
+  border-color: #fcf0f7;
+}
