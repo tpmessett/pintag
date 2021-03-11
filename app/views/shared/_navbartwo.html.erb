@@ -14,7 +14,7 @@
           <form action="<%= board_path current_user.boards.first || Board.first %>" class="search-form form-inline container ">
             <input class="text-input form-control" type="text" placeholder="Find something?" name="search" id="search" />
             <select id="searchtype" name="searchtype" type="text" class="custom-select form-control">
-              <option  selected value="all">Seach All</option>
+              <option  selected value="all">Search All</option>
               <option value="tag">Search By Tag</option>
               <% if @board != nil %>
                 <option value="current-board">Current Board Only</option>
