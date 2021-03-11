@@ -35,7 +35,7 @@
     text-align: center;
     vertical-align: middle;
     padding: 10px;
-    color: #62bcba
+    color: #62bcba;
 }
 
 .circle-icon-nav:hover {
@@ -51,6 +51,8 @@
 
 .navbar-light .navbar-nav .nav-link:hover {
   background-color: #fcfcfc;
+  color: #62bcba;
+  border-radius: 4px;
 }
 
 .fa-map-pin {
