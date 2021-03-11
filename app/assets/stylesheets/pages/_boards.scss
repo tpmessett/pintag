@@ -144,6 +144,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  transition: 5s;
  }
 
  #add-content:hover {
@@ -202,6 +203,21 @@
   margin-left: 8px;
   margin-bottom: 16px;
 }
+
+.rounded-slack {
+  background-color: #62bcba;
+  border-radius: 50%;
+  color: #fff;
+  padding: 11px;
+  margin-bottom: 16px;
+  margin-left: 6px;
+  font-size: 1rem;
+}
+.rounded-slack:hover {
+  background-color: #fcfcfc;
+  color: #62bcba;
+  }
+
 
 .card-links {
   height: 0px;

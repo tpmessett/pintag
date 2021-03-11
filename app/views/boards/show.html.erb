@@ -23,12 +23,15 @@
         </a>
 
           <%= link_to 'edit', edit_board_path(@board), class: "material-icons-rounded align-icons material-icons"%>
+          <%= link_to board_send_to_slack_path(@board) do %> <i class="fab fa-slack rounded-slack"></i> <%end%>
+
 
           <a href = "#" data-toggle="modal" data-target="#slackModalCenter">
             <span class="material-icons-rounded align-icons material-icons">
               <i class="fab fa-slack"></i>
             </span>
           </a>
+
           </div>
       </div>
     </div>
