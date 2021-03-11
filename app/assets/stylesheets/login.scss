@@ -132,7 +132,6 @@
     @include signUpActive {
       &:before {
         transform: translate3d($formW,0,0);
-        transform: translate3d($formW,0,0);
       }
     }
 
