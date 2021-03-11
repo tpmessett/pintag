@@ -77,6 +77,12 @@
                   <form action="<%= board_send_to_slack_path(@board) %>" method="post" >
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                       <div class="modal-body" style="text-align:justify;">
+                        <select class="channels form-control mr-sm-2" id="channel" name="channel">
+                          <option value>Which Slack Channel?</option>
+                          <% @channel_names.each do |name| %>
+                            <option value="<%= name %>"><%= name %></option>
+                          <% end %>
+                        </select>
                         <textarea rows="2" cols="25" class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" /></textarea>
                      </div>
                      <div class="modal-footer">
@@ -117,6 +123,12 @@
                   <form action="<%= content_send_content_to_slack_path(content) %>" method="post" >
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                       <div class="modal-body" style="text-align:justify;">
+                        <select class="channels form-control mr-sm-2" id="channel" name="channel">
+                          <option value>Which Slack Channel?</option>
+                          <% @channel_names.each do |name| %>
+                            <option value="<%= name %>"><%= name %></option>
+                          <% end %>
+                        </select>
                         <textarea rows="2" cols="25" class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" /></textarea>
                      </div>
                      <div class="modal-footer">
