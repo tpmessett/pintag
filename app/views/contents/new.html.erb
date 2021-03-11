@@ -8,7 +8,7 @@
           <%= simple_form_for [@board, @content] do |f| %>
           <%= f.input :name %>
           <%= f.input :description %>
-          <%= f.input :link %>
+          <%= f.input :link, input_html: {rows: 1} %>
           <%= f.input :file_upload, as: :file %>
           <%= f.input :tags, collection: @tags, input_html: { id: "share_select", multiple: true } %>
           <%= f.submit "Create content", class: "btn btn-primary" %>
