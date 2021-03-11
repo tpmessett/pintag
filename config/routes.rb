@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   post 'content/:id/tags/create', to: 'tags#create', as: :create_content_tag
 
 
-post '/:slack' => 'webhooks#receive', as: :receive_webhooks
+post '/slack' => 'webhooks#receive', as: :receive_webhooks
 end
