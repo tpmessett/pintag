@@ -24,6 +24,10 @@ class BoardsController < ApplicationController
   end
 
   def show
+    client = Slack::Web::Client.new
+    channels = client.conversations_list.channels
+    @channel_names = []
+    channels.each { |channel| @channel_names << channel.name_normalized}
     @board = Board.find(params[:id])
     @tags = Tag.all
     @contents = @board.contents
@@ -85,11 +89,13 @@ class BoardsController < ApplicationController
 
   def send_to_slack
     client = Slack::Web::Client.new
+    @channel = params[:channel]
     @message = params[:message]
     @board = Board.find(params[:board_id])
     @text = "#{current_user.email} shared #{@board.name}, from https://pintag.app#{board_path @board} with the message: #{@message}"
     authorize @board
-    client.chat_postMessage(channel: '#general', text: @text, as_user: true)
+
+    client.chat_postMessage(channel: @channel, text: @text, as_user: true)
     redirect_to board_path(@board), notice: "shared"
   end
 
