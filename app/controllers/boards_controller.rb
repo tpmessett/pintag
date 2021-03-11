@@ -4,8 +4,7 @@ class BoardsController < ApplicationController
   def index
     @boards = policy_scope(Board)
     @shared_boards = current_user.shared_boards
-    @photos = Unsplash::Photo.random(count: 10, query: "startup&w=200")
-
+    @photos = generate_photos
   end
 
   def new
@@ -92,6 +91,19 @@ class BoardsController < ApplicationController
     authorize @board
     client.chat_postMessage(channel: '#general', text: @text, as_user: true)
     redirect_to board_path(@board), notice: "shared"
+  end
+
+  def generate_photos
+    unsplash = Unsplash::Photo.random(count: 5, query: "startup&w=200")
+    photos = []
+    unsplash.each do |photo|
+      photos << photo.urls.raw
+    end
+    photos.unshift("https://media-exp1.licdn.com/dms/image/C4D1BAQGNAwJ6d_6e8w/company-background_10000/0/1546601904957?e=2159024400&v=beta&t=BCCklNZAZS8uO2z-N3jACcleH4ytQwtPwABd8l0VXac")
+    photos.unshift("http://servicingstopvw.co.uk/wp-content/uploads/2017/11/VW1.jpg")
+    photos.unshift("https://moosend.com/wp-content/uploads/2020/07/Instagram-influencer-marketing.png")
+    photos.unshift("https://i.insider.com/5e4c03d32dae5c4bf412139b?width=1136&format=jpeg")
+    return photos
   end
 
   private
