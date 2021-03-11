@@ -106,13 +106,14 @@
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    opacity: 0.6;
+    opacity: 0.8;
 
 }
 
 .circle-overlay:hover {
   background: #fcfcfc;
   color: #62bcba;
+  opacity:100%;
 }
 
 // a {
@@ -126,7 +127,10 @@
   top: 2px;
   right: 8px;
   cursor: pointer;
-  opacity:0.6;
+  opacity:0.8;
+}
+.delete:hover {
+  color: #fcfcfc !important;
 }
 
 .edit {
@@ -134,9 +138,9 @@
   font-size: 20px;
   position: absolute;
   top: 2px;
-  left: 8px;
+  left: 230px;
   cursor: pointer;
-  opacity:0.6;
+  opacity:0.8;
 }
 
 .slack {
@@ -144,9 +148,10 @@
   font-size: 20px;
   position: absolute;
   bottom: 2px;
-  left: 8px;
+  left: 205px;
+  bottom: 165px;
   cursor: pointer;
-  opacity:0.6;
+  opacity:0.8;
 }
 
 #add-content {
@@ -205,15 +210,15 @@
 .filter_2 {
 
   color: #fcfcfc;
-  background-color: $violet;
-  border-color: $violet;
+  background-color: #62bcba;
+  border-color: #62bcba;
   margin-bottom: 1rem;
   border-radius: 30px;
 }
 
 .filter_2:hover {
   color: #fcfcfc;
-  background:#cfaded;
+  background:#62bcba;
 }
 
 .flex-container {
@@ -227,7 +232,7 @@
 }
 
 .rounded-slack {
-  background-color: #b18fcf;
+  background-color: #62bcba;
   border-radius: 50%;
   color: #fcfcfc;
   padding: 11px;
@@ -239,12 +244,9 @@
 }
 .rounded-slack:hover {
   background-color: #fcfcfc;
-  color: #b18fcf;
+  color: #62bcba;
   }
 
-  .dropdown-color{
-    background: $violet;
-  }
 
 .card-links {
   height: 0px;

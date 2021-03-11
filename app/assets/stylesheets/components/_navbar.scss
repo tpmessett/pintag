@@ -36,25 +36,27 @@
     vertical-align: middle;
     padding: 10px;
     color: #62bcba;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .circle-icon-nav:hover {
   background: rgba(0, 0, 0, 0.0);
   color: #fcfcfc;
+  opacity: 100%;
 }
 
 
 .navbar-light .navbar-nav .nav-link {
   color: #e6e8e6;
   margin-right: 10px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
   background-color: #fcfcfc;
   color: #62bcba;
   border-radius: 4px;
+  opacity:100%;
 }
 
 .fa-map-pin {
@@ -100,18 +102,12 @@
 }
 
 #search-controls {
-  background: #5da8a7;
+  background: #fcfcfc;
   border-radius: 25px;
   border: none;
   padding-left: 16px;
   padding-right: 16px;
   font-size: 14px;
-  opacity: 0.7;
-}
-
-.text-input {
-  background: #5da8a7;
-  color: #fcfcfc;
 }
 
 .search-form {

@@ -80,30 +80,44 @@ color: #474448;
 }
 
 .material-icons-rounded {
-  border-radius: 50px;
-  padding: 6px;
-  background:#b18fcf;
-  color: #fff;
-  opacity: 0.7;
+  background:#62bcba;
+  color: #fcfcfc;
+  opacity: 0.8;
+  border-radius: 50%;
+  padding: 8px;
 }
 
 .material-icons-rounded:hover {
-  background:#fff;
-  color: #b18fcf;
+  background: #fcfcfc;
+  color: #62bcba;
+  opacity: 100%;
 }
 
 .position-icons-share {
   position: absolute;
   top: 8px;
   left: 220px;
-  font-size: 17px;
+  font-size: 23px;
+  color: #62bcba;
+  background: none;
 }
 
 .position-icons-edit {
   position: absolute;
   top: 8px;
   right: 8px;
-  font-size: 17px;
+  font-size: 23px;
+  color: #62bcba;
+  background: none;
+}
+
+.position-icons-share:hover {
+  background:none;
+  color: #fcfcfc;
+}
+.position-icons-edit:hover {
+  background: none;
+  color: #fcfcfc;
 }
 
 
