@@ -27,5 +27,5 @@ Rails.application.routes.draw do
   resources :tags, only: [:edit, :update, :destroy]
   get 'content/:id/tags/new', to: 'tags#new', as: :new_content_tag
   post 'content/:id/tags/create', to: 'tags#create', as: :create_content_tag
-
+  get '/credits', to: 'pages#credits'
 end
