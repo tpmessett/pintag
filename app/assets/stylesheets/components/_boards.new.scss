@@ -101,9 +101,15 @@ color: #474448;
   position: absolute;
   top: 8px;
   right: 8px;
-  
+
 }
 
 .btn-font {
   color: #F7F7F7;
+  border: 1px solid #62bcba;
+}
+
+.btn-font:hover {
+  background-color: transparent;
+  color: #62bcba;
 }
