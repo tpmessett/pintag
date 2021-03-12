@@ -266,3 +266,17 @@
 .m-foot {
   padding-top: 4px;
 }
+
+.alert-info {
+  color: #fcfcfc;
+  background-color: $violet;
+  border-color: $violet;
+  border-radius: 50px;
+}
+
+.alert-info:hover {
+  color:$violet ;
+  background-color: #fcf0f7;
+  border-color: #fcf0f7;
+  border-radius: 50px;
+}
