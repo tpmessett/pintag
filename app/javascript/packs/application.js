@@ -98,6 +98,12 @@ document.addEventListener('turbolinks:load', () => {
         $('#credits').css("bottom", "-" + ($(document).height() * 2) + "px");
         $('.window').hide();
     });
+
+  $(() => {
+    $(".alert-info").prepend(`<i class="far fa-check-circle"></i>`);
+
+});
+
 });
 
 
