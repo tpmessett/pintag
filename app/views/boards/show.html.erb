@@ -12,7 +12,7 @@
 
            <%= f.input :extension, prompt: "Filter by", collection: ["image", "msword", "document", "excel", "sheet", "powerpoint", "presentation", "pdf", "html", "csv", "link"], label: false %>
 
-           <%= f.button :submit,'Submit', class: 'filter_2 ml-2' %>
+           <%= f.button :submit,'Submit', class: 'btn-font filter_2 ml-2' %>
             <% end %>
 
 
@@ -39,14 +39,14 @@
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="m-head modal-header-footer modal-header">
                   <h5 class="modal-title" id="exampleModalLongTitle">Share with people and groups</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                   <form action="<%= share_board_path(@board) %>" method="post" >
-                      <div class="modal-body" style="text-align:justify;">
+                      <div class="share-modal-body modal-body" style="text-align:justify;">
                         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                          <select class="form-control mr-sm-2" id="share_select" type="search"  placeholder=“example@example.com” aria-label="Search" name="user_id[]" multiple >
                           <% User.all.each do |user| %>
@@ -54,9 +54,9 @@
                           <% end %>
                          </select>
                      </div>
-                     <div class="modal-footer">
+                     <div class="m-foot modal-header-footer modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                       <button type="submit" class="btn btn-primary">Share</button>
+                       <button type="submit" class="btn-font btn btn-primary">Share</button>
                      </div>
                   </form>
               </div>
@@ -68,9 +68,9 @@
            <div class="modal fade" id="slackModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Share on slack</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="slack-header modal-header">
+                  <h4 class="modal-title" id="exampleModalLongTitle">Share on slack</h4>
+                  <button type="button" class="close-slack close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -85,9 +85,9 @@
                         </select>
                         <textarea rows="2" cols="25" class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" /></textarea>
                      </div>
-                     <div class="modal-footer">
+                     <div class="slack-footer modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                       <button type="submit" class="btn btn-primary">Share on slack</button>
+                       <button type="submit" class="btn-font btn btn-primary">Share on slack</button>
                      </div>
                   </form>
               </div>
@@ -114,9 +114,9 @@
            <div class="modal fade" id="modal-<%= content.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
-                <div class="modal-header">
+                <div class="slack-header modal-header">
                   <h5 class="modal-title" id="exampleModalLongTitle">Share on slack</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close-slack close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -131,9 +131,9 @@
                         </select>
                         <textarea rows="2" cols="25" class="text-input form-control" type="text" placeholder="type your message" name="message" id="message" /></textarea>
                      </div>
-                     <div class="modal-footer">
+                     <div class="slack-footer modal-footer">
                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                       <button type="submit" class="btn btn-primary">Share on slack</button>
+                       <button type="submit" class="btn-font btn btn-primary">Share on slack</button>
                      </div>
                   </form>
               </div>
