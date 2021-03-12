@@ -48,9 +48,7 @@ document.addEventListener('turbolinks:load', () => {
   $('#share_select').select2({
     tags: true
   });
-});
 
-$(document).ready(function () {
 
     $('a[name=creditos]').click(function (e) {
         e.preventDefault();
