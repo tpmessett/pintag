@@ -74,7 +74,7 @@ $(document).ready(function () {
         $('#credits').animate({
             bottom: (maskHeight * 1)
         }, {
-            duration: 75000,
+            duration: 60000,
             complete: function () {
                 $('#titles').fadeOut();
                 $('.window').fadeOut();
